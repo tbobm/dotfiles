@@ -24,6 +24,5 @@ alias "ALIASES"="emacs ~/.bash_profile;source ~/.bash_profile;clear"
 alias "L"="clear; l;"
 alias 'ADDALIAS'='sh ~/.ajout_alias.sh;source ~/.bash_profile;clear'
 alias 'test'='echo 'test''
-alias 'SSHANTOINE'='ssh -p 2222 bob@10.104.3.42'
 alias 'ip'='curl icanhazip.com'
 alias 'test'='test'
