@@ -1,3 +1,4 @@
+#!/usr/bin/python3.5
 import sys
 import os
 
@@ -6,21 +7,22 @@ def get_errors(element):
     return (element[1])
 
 
-def pretty_tuple(l):
-    for path, status in l:
+def pretty_tuple(tup):
+    for path, status in tup:
         print("File {} is missing a header.".format(path))
 
 
-def crawl_in_files(dir_to_crawl):
+def crawl_in_files(dir_to_crawl, func_to_exec=None):
+    if func_to_exec is None:
+        func_to_exec = crawl_in_files
     res = []
-    currpath = dir_to_crawl
     for file in os.listdir(currpath):
 #        print(os.path.realpath(file))
         if file.endswith(".c"):
             res.append(has_header(dir_to_crawl + '/' + file))
         if os.path.isdir(file):
             pass
-#            res = crawl_in_files(file)
+           res = func_to_exec(file)
     return (res)
 
 
@@ -41,7 +43,13 @@ def print_first_linesf(f, fname):
     try:
         print("0:0: {}\n0:1 {}\n1:0: {}\n1:1: {}\n".format(f[0][0], f[0][1], f[1][0], f[1][1]))
     except IndexError:
-        print("There was a problem formatting the file {}".format(fname))
+        print("There was a problem printing the first lines of the file {}".format(fname))
+
+
+def get_paths(path_list=None):
+    if path_list is None:
+        path_list = [os.getcwd() + '/.']
+    return path_list
 
 
 if __name__ == "__main__":
