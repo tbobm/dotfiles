@@ -1,4 +1,4 @@
-#!/usr/bin/python3.5
+#!/usr/bin/python3
 import sys
 import os
 
@@ -16,13 +16,13 @@ def crawl_in_files(dir_to_crawl, func_to_exec=None):
     if func_to_exec is None:
         func_to_exec = crawl_in_files
     res = []
-    for file in os.listdir(currpath):
+    for file in os.listdir(dir_to_crawl):
 #        print(os.path.realpath(file))
         if file.endswith(".c"):
             res.append(has_header(dir_to_crawl + '/' + file))
         if os.path.isdir(file):
             pass
-           res = func_to_exec(file)
+            res = func_to_exec(file)
     return (res)
 
 
@@ -31,17 +31,21 @@ def has_header(filename):
     with open(filename, 'r') as f:
         first_lines.append(f.readline())
         first_lines.append(f.readline())
-    if first_lines[0].startswith("/*") and first_lines[1].startswith("**"):
-        print("Not a single problem with {}".format(filename))
-        return (os.path.abspath(filename), False)
+    return is_header_ok(first_lines, filename)
+
+
+def is_header_ok(content, fname):
+    if content[0].startswith("/*") and content[1].startswith("**"):
+        print("Not a single problem with {}".format(fname))
+        return (os.path.abspath(fname), False)
     else:
-        print_first_linesf(first_lines, filename)
-        return (os.path.abspath(filename), True)
+        print_first_linesf(content, fname)
+        return (os.path.abspath(fname), True)
 
 
 def print_first_linesf(f, fname):
     try:
-        print("0:0: {}\n0:1 {}\n1:0: {}\n1:1: {}\n".format(f[0][0], f[0][1], f[1][0], f[1][1]))
+        print("Error in {}'s header !\nline 0: {}line 1: {}".format(fname, f[0], f[1]))
     except IndexError:
         print("There was a problem printing the first lines of the file {}".format(fname))
 
@@ -60,6 +64,6 @@ if __name__ == "__main__":
         direct = os.getcwd() + '/' + sys.argv[1]
     print(direct)
     res = crawl_in_files(direct)
-    tot_false = len(filter(lambda x: x[1] == False, res))
+    tot_false = len(list(filter(lambda x: x[1] == False, res)))
     print(tot_false)
     pretty_tuple(filter(get_errors, res))
