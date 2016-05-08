@@ -1,4 +1,4 @@
-/*
+ *
 ** Get_infos.c for projet_easter in /var/Projet_Easter/NPROJECT
 **
 ** Made by GUEYE Osir
