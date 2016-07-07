@@ -1,6 +1,6 @@
 # MyConfiguration
 
-First repository I clone when I start working with a new UNIX-based computer
+My dotfiles and configurations.
 
 ## Content:
 - Installs:
@@ -13,7 +13,7 @@ First repository I clone when I start working with a new UNIX-based computer
   * csv\_add_number.py
 - UserSettings:
   * Windows:
-    * add_cmder_right_right_click.re
+    * add_cmder\_right\_right_click.re
   * SublimeText3
   * bash_profile
 - bash_funcs:
@@ -31,7 +31,7 @@ First repository I clone when I start working with a new UNIX-based computer
   * places
 - README.md
 - ajout_alias.sh
--trim_r.sh
+- trim_r.sh
 
 ## Todo
 > Create a shell script to make a one-command-install <br>
