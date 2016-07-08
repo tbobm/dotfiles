@@ -52,7 +52,7 @@ alias ls="ls --color"
 alias l="ls"
 alias ll="ls -l"
 alias la="ls -a"
-
+alias lsh='ls -lhXG' # long listing, human-readable, sort by extension, do not show group info
 function lc() {
     cd $1
     ls
