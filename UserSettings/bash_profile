@@ -1,18 +1,7 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
+# ~/.bashrc made by Theo Massard
 
-# Note: PS1 and umask are already set in /etc/profile. You should not
-# need this unless you want different defaults for root.
-# PS1='${debian_chroot:+($debian_chroot)}\h:\w\$ '
-# umask 022
-
-# You may uncomment the following lines if you want `ls' to be colorized:
-# export LS_OPTIONS='--color=auto'
-# eval "`dircolors`"
-# alias ls='ls $LS_OPTIONS'
-# alias ll='ls $LS_OPTIONS -l'
-# alias l='ls $LS_OPTIONS -lA'
-#
-# Some more alias to avoid making mistakes:
+# @env variables
+export GITHUB_CONFIG=/THEO/github/MyConfiguration/
 
 # @mistake files
 alias rm='rm -i'
@@ -53,6 +42,7 @@ alias l="ls"
 alias ll="ls -l"
 alias la="ls -a"
 alias lsh='ls -lhXG' # long listing, human-readable, sort by extension, do not show group info
+
 function lc() {
     cd $1
     ls
@@ -60,7 +50,19 @@ function lc() {
 
 # @output management
 alias L=" | less"
+alias G=" | grep"
 
+# @network
+alias ports="netstat -tulanp"
+
+# @github general
+alias ga="git add"
+alias gp="git push"
+alias gci="git commit -m"
+alias gl="git pull"
+
+# @github user
+alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG;"
 
 # @miscellianous
 alias ".."="cd .."
