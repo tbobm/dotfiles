@@ -71,12 +71,20 @@ function top_used_commands() { # prints the top 15 typed commands
     history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n15
 }
 
-function space_left () { # prints the space left on the machine
+function space_left() { # prints the space left on the machine
     echo "Device         Total  Used  Free  Pct MntPoint"
     df -h | grep "/dev/sd"
     df -h | grep "/mnt"
 }
 
+function get_uptime() { # pretty prints uptime
+    uptime | awk '{ print "Uptime:", $3, $4, $5 }' | sed 's/,//g'
+    return;
+}
+
+function f_string_in_files() {
+    find . -type f -iname "$2" -exec grep -l "$1" {} +
+}
 # Useless on VM
 #function myinfo () {
 #    printf "CPU: "
