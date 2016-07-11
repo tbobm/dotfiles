@@ -267,6 +267,8 @@
 
 ## Shell
 
+* [MARA_Framework](https://github.com/xtiankisutsa/MARA_Framework) - MARA is a Mobile Application Reverse engineering and Analysis Framework. It is a toolkit that puts together commonly used mobile application reverse engineering tools, in order to make the task of reverse engineering and analysis easier and friendlier to mobile application developers and security professionals.
+* [docker-gc](https://github.com/spotify/docker-gc) - Docker garbage collection of containers and images
 * [trigger](https://github.com/sharkdp/trigger) - Run a user-defined command on file changes
 * [bash-script-template](https://github.com/ralish/bash-script-template) - A best practices Bash script template with many useful functions
 * [ipset-blacklist](https://github.com/trick77/ipset-blacklist) - A script to ban large numbers of IP addresses published in blacklists.
