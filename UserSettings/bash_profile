@@ -19,6 +19,14 @@ alias chr="chmod 644"
 alias SB="emacs ~/.bashrc; source ~/.bashrc"
 alias SE="emacs ~/.emacs.d/init.el"
 
+function opti_config() {
+    {
+	echo "configuration optimisation:"
+	echo "SB    = \"emacs ~/.bashrc; source ~/.bashrc\""
+	echo "SE    = \"emacs ~/.emacs.d/init.el\""
+    }
+}
+
 # @opti basic
 alias e="emacs"
 alias j="jobs"
@@ -26,6 +34,20 @@ alias c="cat"
 alias g="git"
 alias sv="service"
 alias cu="curl"
+alias root='sudo -i' # Become root
+
+function opti_basic_info() {
+    {
+	echo "basic optimisation aliases:"
+	echo "e    = emacs"
+	echo "j    = jobs"
+	echo "c    = cat"
+	echo "g    = git"
+	echo "sv   = service"
+	echo "cu   = curl"
+	echo "root = sudo -i"
+    }
+}
 
 # @opti docker
 alias dk="docker"
@@ -36,12 +58,35 @@ alias DRB="docker-compose up -d --build; ./init_databases.sh --deploy"
 alias REB="DCB && DCU && ./init_databases.sh --deploy"
 alias RUI="remove_untagged_images"
 
+function opti_docker() {
+    {
+	echo "docker optimisation aliases:"
+	echo "dk    = docker"
+	echo "DC    = docker-compose"
+	echo "DCB   = docker-compose build"
+	echo "DCU   = docker-compose up -d"
+	echo "DRB   = docker-compose up -d; ./init-databses.sh --deploy"
+	echo "REB   = DCB && DCU && ./init_databases.sh --deploy"
+	echo "RUI   = remove_untagged_images"
+    }
+}
+
 # @ls tunings
 alias ls="ls --color"
 alias l="ls"
 alias ll="ls -l"
 alias la="ls -a"
 alias lsh='ls -lhXG' # long listing, human-readable, sort by extension, do not show group info
+
+function ls_aliases() {
+    {
+	echo "ls aliases:"
+	echo "ls   = ls --color"
+	echo "l    = ls"
+	echo "la   = ls -a"
+	echo "lsh  = ls -lhXG (long listing, sorts by extension, no group info)"
+    }
+}
 
 function lc() {
     cd $1
@@ -53,13 +98,14 @@ alias L=" | less"
 alias G=" | grep"
 
 # @network
-alias ports="netstat -tulanp"
+alias ports="netstat -tulanp" # shows open ports
 
 # @github general
 alias ga="git add"
 alias gp="git push"
-alias gci="git commit -m"
+alias gc="git commit -m"
 alias gl="git pull"
+alias gs="git status"
 
 # @github user
 alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG;"
