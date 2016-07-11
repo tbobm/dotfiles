@@ -1,29 +1,30 @@
-plugins:
-Achievement
-Alignment
-All Autocomplete
-Anaconda
-auto-save
-Auto Filename
-Bracketguard
-Colorcoder
-Colorsublime
-Colorsublime -themes
-Comment snippets
-Dockblockr
-Emmet
-Hex-Bin system
-HTML5
-MarkdownEditing
-phpcs
-preap
-Selection Evaluator
-sftp
-SideBarEnhancements
-SublimeLinter
+# plugins:
+- Achievement
+- Alignment
+- All Autocomplete
+- Anaconda
+- auto-save
+- Auto Filename
+- Bracketguard
+- Colorcoder
+- Colorsublime
+- Colorsublime -themes
+- Comment snippets
+- Dockblockr
+- Emmet
+- Hex-Bin system
+- HTML5
+- MarkdownEditing
+- phpcs
+- preap
+- Selection Evaluator
+- sftp
+- SideBarEnhancements
+- SublimeLinter
 
 
-//////////////////////////
+# User Settings:
+```
 {
 	"bold_folder_labels": true,
 	"caret_extra_bottom": 2,
@@ -63,4 +64,4 @@ SublimeLinter
 	"theme": "preap.sublime-theme",
 	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true
-}
+}```
