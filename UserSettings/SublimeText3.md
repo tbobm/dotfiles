@@ -24,8 +24,7 @@
 
 
 # User Settings:
-```
-{
+
 	"bold_folder_labels": true,
 	"caret_extra_bottom": 2,
 	"caret_extra_top": 2,
@@ -64,4 +63,3 @@
 	"theme": "preap.sublime-theme",
 	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true
-}```
