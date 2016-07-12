@@ -2,6 +2,16 @@
 
 # @env variables
 export GITHUB_CONFIG=/THEO/github/MyConfiguration/
+export HISTFILESIZE=20000
+export HISTSIZE=10000
+export HISTIGNORE="&:ls:[bf]g:exit"
+export GOPATH=~/work
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+
+# @history management
+shopt -s histappend
+shopt -s cmdhist
 
 # @mistake files
 alias rm='rm -i'
@@ -35,6 +45,7 @@ alias g="git"
 alias sv="service"
 alias cu="curl"
 alias root='sudo -i' # Become root
+alias h="history"
 
 function opti_basic_info() {
     {
@@ -94,7 +105,7 @@ function lc() {
 }
 
 # @output management
-alias L=" | less"
+alias less='less -FSRX'
 alias G=" | grep"
 
 # @network
@@ -109,6 +120,7 @@ alias gs="git status"
 
 # @github user
 alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG;"
+alias get_git_stars="python /THEO/github/starred/starred.py --username massard-t --sort"
 
 # @miscellianous
 alias ".."="cd .."
