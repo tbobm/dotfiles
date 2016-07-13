@@ -8,6 +8,7 @@
     - [C#](#c#)
     - [C++](#c++)
     - [CSS](#css)
+    - [CoffeeScript](#coffeescript)
     - [Elixir](#elixir)
     - [Emacs Lisp](#emacs lisp)
     - [Go](#go)
@@ -50,6 +51,11 @@
 
 * [You-Dont-Need-Javascript](https://github.com/NamPNQ/You-Dont-Need-Javascript) - Css is powerful, you can do a lot of things without js.
 
+## CoffeeScript
+
+* [marp](https://github.com/yhatt/marp) - Markdown presentation writer, powered by Electron.
+* [node-hbase](https://github.com/wdavidw/node-hbase) - Asynchronous HBase client for NodeJs using REST
+
 ## Elixir
 
 * [elixir](https://github.com/elixir-lang/elixir) - Elixir is a dynamic, functional language designed for building scalable and maintainable applications
@@ -63,11 +69,12 @@
 
 ## Go
 
+* [retry](https://github.com/Rican7/retry) - A simple, stateless, functional mechanism to perform actions repetitively until successful.
+* [hub](https://github.com/github/hub) - hub helps you win at git.
 * [traefik](https://github.com/containous/traefik) - Træfɪk, a modern reverse proxy
 * [orgalorg](https://github.com/reconquest/orgalorg) - Next generation parallel SSH and file synchronization tool
 * [work](https://github.com/gocraft/work) - Process background jobs in Go
 * [pget](https://github.com/Code-Hex/pget) - Parallel file download client
-* [asciinema](https://github.com/asciinema/asciinema) - Terminal session recorder
 * [integram](https://github.com/Requilence/integram) - Integrate Telegram into your workflow – https://integram.org
 * [gotraining](https://github.com/ardanlabs/gotraining) - Go Training Class Material :
 * [tinycron](https://github.com/bcicen/tinycron) - A very small replacement for cron
@@ -120,6 +127,7 @@
 
 ## JavaScript
 
+* [p_slides](https://github.com/munen/p_slides) - dead simple way to create semantic, nice to look at slides - without any dependencies
 * [netmonitor](https://github.com/awalGarg/netmonitor) - A Chrome extension which shows background network activity of web pages after they are loaded.
 * [listr](https://github.com/SamVerschueren/listr) - Terminal task list
 * [portia](https://github.com/scrapinghub/portia) - Visual scraping for Scrapy
@@ -184,6 +192,7 @@
 * [PytheM](https://github.com/m4n3dw0lf/PytheM) - PytheM - Python penetration testing framework
 * [Lango](https://github.com/ayoungprogrammer/Lango) - Language Lego
 * [starred](https://github.com/maguowei/starred) - GitHub starred: make your own awesome lists page by GitHub star!
+* [asciinema](https://github.com/asciinema/asciinema) - Terminal session recorder
 * [shutit](https://github.com/ianmiell/shutit) - Automation framework for programmers
 * [weevely3](https://github.com/epinna/weevely3) - Weaponized web shell
 * [tplmap](https://github.com/epinna/tplmap) - Automatic Server-Side Template Injection Detection and Exploitation Tool
@@ -215,7 +224,7 @@
 * [scikit-learn](https://github.com/scikit-learn/scikit-learn) - scikit-learn: machine learning in Python
 * [matplotlib](https://github.com/matplotlib/matplotlib) - matplotlib: plotting with Python
 * [fn.py](https://github.com/kachayev/fn.py) - Functional programming in Python: implementation of missing features to enjoy FP
-* [powerline-shell](https://github.com/milkbikis/powerline-shell) - A beautiful and useful prompt for your shell
+* [powerline-shell](https://github.com/banga/powerline-shell) - A beautiful and useful prompt for your shell
 * [gdb-dashboard](https://github.com/cyrus-and/gdb-dashboard) - Modular visual interface for GDB in Python
 * [mkdocs](https://github.com/mkdocs/mkdocs) - Project documentation with Markdown.
 * [readthedocs.org](https://github.com/rtfd/readthedocs.org) - source code to readthedocs.org
