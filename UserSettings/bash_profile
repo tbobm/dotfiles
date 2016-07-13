@@ -9,6 +9,9 @@ export GOPATH=~/work
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
+# @z opti cd
+. ~/.z_config/z.sh
+
 # @history management
 shopt -s histappend
 shopt -s cmdhist
@@ -121,7 +124,7 @@ alias gs="git status"
 # @github user
 alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG;"
 alias save_inputrc="cp ~/.inputrc $GITHUB_CONFIG/UserSettings/inputrc; cd $GITHUB_CONFIG;"
-alias get_git_stars="python /THEO/github/starred/starred.py --username massard-t --sort"
+alias save_git_stars="python /THEO/github/starred/starred.py --username massard-t --sort"
 
 # @miscellianous
 alias ".."="cd .."
