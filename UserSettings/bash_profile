@@ -28,6 +28,14 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u @ VM_1 - 2222 \[\033[00
 alias chx="chmod 755"
 alias chr="chmod 644"
 
+function opti_perm() {
+    {
+	echo "permission optimisation:"
+	echo "chx     = chmod 755"
+	echo "chr     = chmod 644"
+    }
+}
+
 # @opti conf
 alias SB="emacs ~/.bashrc; source ~/.bashrc"
 alias SE="emacs ~/.emacs.d/init.el"
@@ -121,10 +129,29 @@ alias gc="git commit -m"
 alias gl="git pull"
 alias gs="git status"
 
+function github_general() {
+    {
+	echo "optimisation github general:"
+	echo "ga   = git add"
+	echo "gp   = git push"
+	echo "gc   = git commit -m"
+	echo "gl   = git pull"
+	echo "gs   = git status"
+    }
+}
 # @github user
 alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG;"
 alias save_inputrc="cp ~/.inputrc $GITHUB_CONFIG/UserSettings/inputrc; cd $GITHUB_CONFIG;"
 alias save_git_stars="python /THEO/github/starred/starred.py --username massard-t --sort"
+
+function github_user() {
+    {
+	echo "optimisation github user:"
+	echo "save_bash     = cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG"
+	echo "save_inputrc  = cp ~/.inputrc $GITHUB_CONFIG/UserSettings/inputrc; cd $GITHUB_CONFIG"
+	echo "save_git_stars= python /THEO/github/starred/starred.py --username massard-t --sort"
+    }
+}
 
 # @miscellianous
 alias ".."="cd .."
