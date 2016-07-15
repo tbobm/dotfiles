@@ -29,6 +29,6 @@ case "$1" in
 	    ;;
     --setup) setup
 	     ;;
-    *) find_files $1
+    *) find_files "$1"
        ;;
 esac
