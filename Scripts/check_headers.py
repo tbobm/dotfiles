@@ -17,7 +17,7 @@ def crawl_in_files(dir_to_crawl, func_to_exec=None):
         func_to_exec = crawl_in_files
     res = []
     for file in os.listdir(dir_to_crawl):
-#        print(os.path.realpath(file))
+        #        print(os.path.realpath(file))
         if file.endswith(".c"):
             res.append(has_header(dir_to_crawl + '/' + file))
         if os.path.isdir(file):
@@ -45,9 +45,12 @@ def is_header_ok(content, fname):
 
 def print_first_linesf(f, fname):
     try:
-        print("Error in {}'s header !\nline 0: {}line 1: {}".format(fname, f[0], f[1]))
+        print("Error in {}'s header !\nline 0: {}line 1: {}".format(
+            fname, f[0], f[1])
+        )
     except IndexError:
-        print("There was a problem printing the first lines of the file {}".format(fname))
+        print("There was a problem printing\
+        the first lines of the file {}".format(fname))
 
 
 def get_paths(path_list=None):
@@ -64,6 +67,6 @@ if __name__ == "__main__":
         direct = os.getcwd() + '/' + sys.argv[1]
     print(direct)
     res = crawl_in_files(direct)
-    tot_false = len(list(filter(lambda x: x[1] == False, res)))
+    tot_false = len(list(filter(lambda x: x[1] is False, res)))
     print(tot_false)
     pretty_tuple(filter(get_errors, res))

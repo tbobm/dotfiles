@@ -7,7 +7,11 @@ def create_config(params=None):
     if params is None:
         return False
     try:
-        informations = {"email": params[0], "name": params[1], "firstname": params[2]}
+        informations = {
+            "email": params[0],
+            "name": params[1],
+            "firstname": params[2]
+        }
         print("Your infos {}".format(informations))
         return informations
     except IndexError:
