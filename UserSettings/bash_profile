@@ -28,9 +28,17 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u @ VM_1 - 2222 \[\033[00
 alias chx="chmod 755"
 alias chr="chmod 644"
 
+function opti_perm() {
+    {
+	echo "permission optimisation:"
+	echo "chx     = chmod 755"
+	echo "chr     = chmod 644"
+    }
+}
+
 # @opti conf
-alias SB="emacs ~/.bashrc; source ~/.bashrc"
-alias SE="emacs ~/.emacs.d/init.el"
+alias SB="emacs ~/.bashrc; source ~/.bashrc" # @O.C
+alias SE="emacs ~/.emacs.d/init.el" # @O.C
 
 function opti_config() {
     {
@@ -41,14 +49,14 @@ function opti_config() {
 }
 
 # @opti basic
-alias e="emacs"
-alias j="jobs"
-alias c="cat"
-alias g="git"
-alias sv="service"
-alias cu="curl"
-alias root='sudo -i' # Become root
-alias h="history"
+alias e="emacs" # @O.B
+alias j="jobs" # @O.B
+alias c="cat" # @O.B
+alias g="git" # @O.B
+alias sv="service" # @O.B
+alias cu="curl" # @O.B
+alias root='sudo -i' # @O.B Become root
+alias h="history" # @O.B
 
 function opti_basic_info() {
     {
@@ -63,14 +71,19 @@ function opti_basic_info() {
     }
 }
 
+function wtfaliases() {
+    echo "Your aliases that contains the tag $1 are:"
+    grep -i $1 ~/.bashrc
+}
+
 # @opti docker
-alias dk="docker"
-alias DC="docker-compose"
-alias DCB="docker-compose build"
-alias DCU="docker-compose up -d"
-alias DRB="docker-compose up -d --build; ./init_databases.sh --deploy"
-alias REB="DCB && DCU && ./init_databases.sh --deploy"
-alias RUI="remove_untagged_images"
+alias dk="docker" # @O.D
+alias DC="docker-compose" # @O.D
+alias DCB="docker-compose build" # @O.D
+alias DCU="docker-compose up -d" # @O.D
+alias DRB="docker-compose up -d --build; ./init_databases.sh --deploy" # @O.D
+alias REB="DCB && DCU && ./init_databases.sh --deploy" # @O.D
+alias RUI="remove_untagged_images" # @O.D
 
 function opti_docker() {
     {
@@ -86,11 +99,11 @@ function opti_docker() {
 }
 
 # @ls tunings
-alias ls="ls --color"
-alias l="ls"
-alias ll="ls -l"
-alias la="ls -a"
-alias lsh='ls -lhXG' # long listing, human-readable, sort by extension, do not show group info
+alias ls="ls --color" # @LS
+alias l="ls" # @LS
+alias ll="ls -l" # @LS
+alias la="ls -a" # @LS
+alias lsh='ls -lhXG' # @LS long listing, human-readable, sort by extension, do not show group info
 
 function ls_aliases() {
     {
@@ -108,23 +121,43 @@ function lc() {
 }
 
 # @output management
-alias less='less -FSRX'
-alias G=" | grep"
+alias less='less -FSRX' # @O.M
+alias G=" | grep" # @O.M
 
 # @network
 alias ports="netstat -tulanp" # shows open ports
 
 # @github general
-alias ga="git add"
-alias gp="git push"
-alias gc="git commit -m"
-alias gl="git pull"
-alias gs="git status"
+alias ga="git add" # @G.G
+alias gp="git push" # @G.G
+alias gc="git commit -m" # @G.G
+alias gl="git pull" # @G.G
+alias gs="git status" # @G.G
+alias gst="git status" # @G.G
 
+function github_general() {
+    {
+	echo "optimisation github general:"
+	echo "ga   = git add"
+	echo "gp   = git push"
+	echo "gc   = git commit -m"
+	echo "gl   = git pull"
+	echo "gs   = git status"
+    }
+}
 # @github user
 alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG;"
 alias save_inputrc="cp ~/.inputrc $GITHUB_CONFIG/UserSettings/inputrc; cd $GITHUB_CONFIG;"
 alias save_git_stars="python /THEO/github/starred/starred.py --username massard-t --sort"
+
+function github_user() {
+    {
+	echo "optimisation github user:"
+	echo "save_bash     = cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG"
+	echo "save_inputrc  = cp ~/.inputrc $GITHUB_CONFIG/UserSettings/inputrc; cd $GITHUB_CONFIG"
+	echo "save_git_stars= python /THEO/github/starred/starred.py --username massard-t --sort"
+    }
+}
 
 # @miscellianous
 alias ".."="cd .."
