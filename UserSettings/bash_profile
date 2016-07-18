@@ -17,16 +17,16 @@ shopt -s histappend
 shopt -s cmdhist
 
 # @mistake files
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+alias rm='rm -i' # @M.F
+alias cp='cp -i' # @M.F
+alias mv='mv -i' # @M.F
 
 # @prompt simple
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u @ VM_1 - 2222 \[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # @opti permissions
-alias chx="chmod 755"
-alias chr="chmod 644"
+alias chx="chmod 755" # @O.P
+alias chr="chmod 644" # @O.P
 
 function opti_perm() {
     {
@@ -73,7 +73,7 @@ function opti_basic_info() {
 
 function wtfaliases() {
     echo "Your aliases that contains the tag $1 are:"
-    grep -i $1 ~/.bashrc
+    pygmentize -g ~/.bashrc | grep -i $1
 }
 
 # @opti docker
@@ -145,10 +145,11 @@ function github_general() {
 	echo "gs   = git status"
     }
 }
+
 # @github user
-alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG;"
-alias save_inputrc="cp ~/.inputrc $GITHUB_CONFIG/UserSettings/inputrc; cd $GITHUB_CONFIG;"
-alias save_git_stars="python /THEO/github/starred/starred.py --username massard-t --sort"
+alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG;" # @G.U
+alias save_inputrc="cp ~/.inputrc $GITHUB_CONFIG/UserSettings/inputrc; cd $GITHUB_CONFIG;" # @G.U
+alias save_git_stars="python /THEO/github/starred/starred.py --username massard-t --sort" # @G.U
 
 function github_user() {
     {
