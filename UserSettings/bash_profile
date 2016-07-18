@@ -4,7 +4,7 @@
 export GITHUB_CONFIG=/THEO/github/MyConfiguration/
 export HISTFILESIZE=20000
 export HISTSIZE=10000
-export HISTIGNORE="&:ls:[bf]g:exit"
+export HISTIGNORE="&:ls:[bf]g:exit:l:h"
 export GOPATH=~/work
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
@@ -28,25 +28,9 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u @ VM_1 - 2222 \[\033[00
 alias chx="chmod 755" # @O.P
 alias chr="chmod 644" # @O.P
 
-function opti_perm() {
-    {
-	echo "permission optimisation:"
-	echo "chx     = chmod 755"
-	echo "chr     = chmod 644"
-    }
-}
-
 # @opti conf
 alias SB="emacs ~/.bashrc; source ~/.bashrc" # @O.C
 alias SE="emacs ~/.emacs.d/init.el" # @O.C
-
-function opti_config() {
-    {
-	echo "configuration optimisation:"
-	echo "SB    = \"emacs ~/.bashrc; source ~/.bashrc\""
-	echo "SE    = \"emacs ~/.emacs.d/init.el\""
-    }
-}
 
 # @opti basic
 alias e="emacs" # @O.B
@@ -57,23 +41,13 @@ alias sv="service" # @O.B
 alias cu="curl" # @O.B
 alias root='sudo -i' # @O.B Become root
 alias h="history" # @O.B
-
-function opti_basic_info() {
-    {
-	echo "basic optimisation aliases:"
-	echo "e    = emacs"
-	echo "j    = jobs"
-	echo "c    = cat"
-	echo "g    = git"
-	echo "sv   = service"
-	echo "cu   = curl"
-	echo "root = sudo -i"
-    }
-}
+alias wtfa="wtfaliases" # @O.B
+alias tuc="top_used_commands"
 
 function wtfaliases() {
-    echo "Your aliases that contains the tag $1 are:"
-    pygmentize -g ~/.bashrc | grep -i $1
+    echo "Your aliases that contains $1 are:"
+    echo
+    pygmentize -g ~/.bashrc | grep -C 1 $1
 }
 
 # @opti docker
@@ -85,35 +59,12 @@ alias DRB="docker-compose up -d --build; ./init_databases.sh --deploy" # @O.D
 alias REB="DCB && DCU && ./init_databases.sh --deploy" # @O.D
 alias RUI="remove_untagged_images" # @O.D
 
-function opti_docker() {
-    {
-	echo "docker optimisation aliases:"
-	echo "dk    = docker"
-	echo "DC    = docker-compose"
-	echo "DCB   = docker-compose build"
-	echo "DCU   = docker-compose up -d"
-	echo "DRB   = docker-compose up -d; ./init-databses.sh --deploy"
-	echo "REB   = DCB && DCU && ./init_databases.sh --deploy"
-	echo "RUI   = remove_untagged_images"
-    }
-}
-
 # @ls tunings
 alias ls="ls --color" # @LS
 alias l="ls" # @LS
 alias ll="ls -l" # @LS
 alias la="ls -a" # @LS
 alias lsh='ls -lhXG' # @LS long listing, human-readable, sort by extension, do not show group info
-
-function ls_aliases() {
-    {
-	echo "ls aliases:"
-	echo "ls   = ls --color"
-	echo "l    = ls"
-	echo "la   = ls -a"
-	echo "lsh  = ls -lhXG (long listing, sorts by extension, no group info)"
-    }
-}
 
 function lc() {
     cd $1
@@ -135,30 +86,10 @@ alias gl="git pull" # @G.G
 alias gs="git status" # @G.G
 alias gst="git status" # @G.G
 
-function github_general() {
-    {
-	echo "optimisation github general:"
-	echo "ga   = git add"
-	echo "gp   = git push"
-	echo "gc   = git commit -m"
-	echo "gl   = git pull"
-	echo "gs   = git status"
-    }
-}
-
 # @github user
 alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG;" # @G.U
 alias save_inputrc="cp ~/.inputrc $GITHUB_CONFIG/UserSettings/inputrc; cd $GITHUB_CONFIG;" # @G.U
 alias save_git_stars="python /THEO/github/starred/starred.py --username massard-t --sort" # @G.U
-
-function github_user() {
-    {
-	echo "optimisation github user:"
-	echo "save_bash     = cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG"
-	echo "save_inputrc  = cp ~/.inputrc $GITHUB_CONFIG/UserSettings/inputrc; cd $GITHUB_CONFIG"
-	echo "save_git_stars= python /THEO/github/starred/starred.py --username massard-t --sort"
-    }
-}
 
 # @miscellianous
 alias ".."="cd .."
