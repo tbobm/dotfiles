@@ -1,13 +1,14 @@
 # ~/.bashrc made by Theo Massard
 
 # @env variables
-export GITHUB_CONFIG=/THEO/github/MyConfiguration/
+export GITHUB_CONFIG=/THEO/github/MyConfiguration
 export HISTFILESIZE=20000
 export HISTSIZE=10000
 export HISTIGNORE="&:ls:[bf]g:exit:l:h"
 export GOPATH=~/work
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
+export CHEATCOLORS=true
 
 # @z opti cd
 . ~/.z_config/z.sh
@@ -88,8 +89,9 @@ alias gst="git status" # @G.G
 
 # @github user
 alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG;" # @G.U
-alias save_inputrc="cp ~/.inputrc $GITHUB_CONFIG/UserSettings/inputrc; cd $GITHUB_CONFIG;" # @G.U
+alias save_inputrc="cp ~/.inputrc $GITHUB_CONFIGU/serSettings/inputrc; cd $GITHUB_CONFIG;" # @G.U
 alias save_git_stars="python /THEO/github/starred/starred.py --username massard-t --sort" # @G.U
+alias save_emacs="cp ~/.emacs.d/init.el $GITHUB_CONFIG/emacs/init.el; cd $GITHUB_CONFIG;" # @G.U
 
 # @miscellianous
 alias ".."="cd .."
