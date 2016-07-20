@@ -22,6 +22,7 @@
     - [PHP](#php)
     - [Perl](#perl)
     - [PowerShell](#powershell)
+    - [Protocol Buffer](#protocol buffer)
     - [Python](#python)
     - [Ruby](#ruby)
     - [Rust](#rust)
@@ -96,10 +97,10 @@
 * [golearn](https://github.com/sjwhitworth/golearn) - Machine Learning for Go
 * [caddy](https://github.com/mholt/caddy) - Fast, cross-platform HTTP/2 web server with automatic HTTPS
 * [teleport](https://github.com/gravitational/teleport) - SSH infrastructure for clusters and teams. Want to chat/see a demo? mailto:info@gravitational.com
-* [lantern](https://github.com/getlantern/lantern) - :zap: Open Internet for everyone. Lantern is a free desktop application that delivers fast, reliable and secure access to the open Internet for users in censored regions. It uses a variety of techniques to stay unblocked, including P2P and domain fronting. Lantern relies on users in uncensored regions acting as access points to the open Internet.
+* [lantern](https://github.com/getlantern/lantern) - :zap: Open Internet for everyone. Lantern is a free application that delivers fast, reliable and secure access to the open Internet for users in censored regions. It uses a variety of techniques to stay unblocked, including domain fronting, p2p, and pluggable transports.
 * [gods](https://github.com/emirpasic/gods) - Go Data Structures. Containers, Sets, Lists, Stacks, Maps, BidiMaps, Trees, HashSet, TreeSet, ArrayList, SinglyLinkedList, DoublyLinkedList, LinkedListStack, ArrayStack, HashMap, TreeMap, HashBidiMap, TreeBidiMap, RedBlackTree, BTree, BinaryHeap, Comparator, Iterator, Enumerable, Sort
 * [go](https://github.com/golang/go) - The Go programming language
-* [iris](https://github.com/kataras/iris) - The fastest web framework for Go in (THIS) earth
+* [iris](https://github.com/kataras/iris) - The fastest web framework written in Go. It has got the closest performance to the nginx, so far.
 * [docker](https://github.com/docker/docker) - Docker - the open-source application container engine
 
 ## HTML
@@ -109,6 +110,9 @@
 
 ## Haskell
 
+* [git-annex](https://github.com/joeyh/git-annex) - manage large files with git
+* [incredible](https://github.com/nomeata/incredible) - The Incredible Proof Machine
+* [hledger](https://github.com/simonmichael/hledger) - The hledger command-line and web-based accounting tool, a Haskell rewrite of ledger.
 * [pandoc](https://github.com/jgm/pandoc) - Universal markup converter
 * [lamdu](https://github.com/lamdu/lamdu) - lamdu - towards the next generation IDE
 * [corrode](https://github.com/jameysharp/corrode) - C to Rust translator
@@ -206,14 +210,22 @@
 * [PowerUpSQL](https://github.com/NetSPI/PowerUpSQL) - PowerUpSQL: A PowerShell Toolkit for Attacking SQL Server
 * [PowerSploit](https://github.com/PowerShellMafia/PowerSploit) - PowerSploit - A PowerShell Post-Exploitation Framework
 
+## Protocol Buffer
+
+* [pgoapi](https://github.com/tejado/pgoapi) - Pokemon Go API lib/demo
+
 ## Python
 
+* [Slack-Gitsin](https://github.com/yasintoy/Slack-Gitsin) - A beautiful Slack command line interface (CLI -> uses 20mb memory).
+* [barf-project](https://github.com/programa-stic/barf-project) - BARF : A multiplatform open source Binary Analysis and Reverse engineering Framework
+* [penetration](https://github.com/ym2011/penetration) - this is some pentest script based on python, just simple but useful, maybe it can help you do something else. just have a try
+* [transitions](https://github.com/tyarkoni/transitions) - A lightweight, object-oriented finite state machine implementation in Python
+* [grequests](https://github.com/kennethreitz/grequests) - Requests + Gevent = <3
 * [pokelocater](https://github.com/emeth-/pokelocater) - Display pokemon nearby to your location on a map.
 * [Matroschka](https://github.com/fgrimme/Matroschka) - Python steganography tool to hide images or text in images
-* [PokemonGo-Map](https://github.com/AHAAAAAAA/PokemonGo-Map) - Live visualization of all the pokemon in your area
+* [PokemonGo-Map](https://github.com/AHAAAAAAA/PokemonGo-Map) - Live visualization of all the pokemon in your area... and more!
 * [BruteXSS](https://github.com/shawarkhanethicalhacker/BruteXSS) - BruteXSS - Cross-Site Scripting Bruteforcer
 * [monitorrent](https://github.com/werwolfby/monitorrent) - 
-* [pokemongo-api-demo](https://github.com/tejado/pokemongo-api-demo) - Pokemon Go API Demo
 * [routersploit](https://github.com/reverse-shell/routersploit) - The Router Exploitation Framework
 * [TrumpScript](https://github.com/samshadwell/TrumpScript) - Make Python great again
 * [q](https://github.com/harelba/q) - q - Run SQL directly on CSV or TSV files
@@ -319,6 +331,9 @@
 
 ## Shell
 
+* [git-extras](https://github.com/tj/git-extras) - GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
+* [docker-gitlab](https://github.com/sameersbn/docker-gitlab) - Dockerized GitLab
+* [wifi-password](https://github.com/rauchg/wifi-password) - Get the password of the wifi you're on (bash)
 * [commit](https://github.com/enkidevs/commit) - Level up your dev skills every day.
 * [pi-hole](https://github.com/pi-hole/pi-hole) - A black hole for Internet advertisements (designed for Raspberry Pi)
 * [quickinstall](https://github.com/jgamblin/quickinstall) - A Shell Script To Take Care Of Ubuntu Basics
