@@ -22,7 +22,6 @@
     - [PHP](#php)
     - [Perl](#perl)
     - [PowerShell](#powershell)
-    - [Protocol Buffer](#protocol buffer)
     - [Python](#python)
     - [Ruby](#ruby)
     - [Rust](#rust)
@@ -52,6 +51,7 @@
 
 ## CSS
 
+* [hackathon-starter](https://github.com/sahat/hackathon-starter) - A boilerplate for Node.js web applications
 * [hubpress.io](https://github.com/HubPress/hubpress.io) - A web application to build your blog on GitHub
 * [You-Dont-Need-Javascript](https://github.com/NamPNQ/You-Dont-Need-Javascript) - Css is powerful, you can do a lot of things without js.
 
@@ -73,6 +73,8 @@
 
 ## Go
 
+* [es](https://github.com/tj/es) - Elasticsearch stats CLI
+* [terraform](https://github.com/hashicorp/terraform) - Terraform is a tool for building, changing, and combining infrastructure safely and efficiently.
 * [elvish](https://github.com/elves/elvish) - A novel Unix shell
 * [build-web-application-with-golang](https://github.com/astaxie/build-web-application-with-golang) - A golang ebook intro how to build a web with golang
 * [gtm](https://github.com/git-time-metric/gtm) - Simple, seamless, lightweight time tracking for all your git projects
@@ -100,7 +102,7 @@
 * [lantern](https://github.com/getlantern/lantern) - :zap: Open Internet for everyone. Lantern is a free application that delivers fast, reliable and secure access to the open Internet for users in censored regions. It uses a variety of techniques to stay unblocked, including domain fronting, p2p, and pluggable transports.
 * [gods](https://github.com/emirpasic/gods) - Go Data Structures. Containers, Sets, Lists, Stacks, Maps, BidiMaps, Trees, HashSet, TreeSet, ArrayList, SinglyLinkedList, DoublyLinkedList, LinkedListStack, ArrayStack, HashMap, TreeMap, HashBidiMap, TreeBidiMap, RedBlackTree, BTree, BinaryHeap, Comparator, Iterator, Enumerable, Sort
 * [go](https://github.com/golang/go) - The Go programming language
-* [iris](https://github.com/kataras/iris) - The fastest web framework written in Go. It has got the closest performance to the nginx, so far.
+* [iris](https://github.com/kataras/iris) - The fastest web framework for Go on (THIS) Earth.
 * [docker](https://github.com/docker/docker) - Docker - the open-source application container engine
 
 ## HTML
@@ -138,6 +140,7 @@
 
 ## JavaScript
 
+* [gatsby](https://github.com/gatsbyjs/gatsby) - Transform plain text into dynamic blogs and websites using React.js
 * [nightHawkResponse](https://github.com/biggiesmallsAG/nightHawkResponse) - Incident Response Forensic Framework
 * [pokemongo-webspoof](https://github.com/iam4x/pokemongo-webspoof) - 👾 Play Pokémon Go from your Mac
 * [fathom](https://github.com/mozilla/fathom) - A framework for extracting meaning from web pages
@@ -188,6 +191,9 @@
 
 ## Others
 
+* [api-guidelines](https://github.com/Microsoft/api-guidelines) - Microsoft REST API Guidelines
+* [security-guide-for-developers](https://github.com/FallibleInc/security-guide-for-developers) - Security Guide for Developers
+* [dl_tutorials](https://github.com/sjchoi86/dl_tutorials) - Deep learning tutorials (2nd ed.)
 * [awesome-electron](https://github.com/sindresorhus/awesome-electron) - Useful resources for creating apps with Electron
 * [gitignore](https://github.com/github/gitignore) - A collection of useful .gitignore templates
 * [HEAD](https://github.com/joshbuchea/HEAD) - A list of everything that could go in the <head> of your document
@@ -202,6 +208,7 @@
 
 ## Perl
 
+* [lua-resty-auto-ssl](https://github.com/GUI/lua-resty-auto-ssl) - On the fly (and free) SSL registration and renewal inside OpenResty/nginx with Let's Encrypt.
 * [ack2](https://github.com/petdance/ack2) - ack 2.0 is a greplike tool optimized for programmers searching large heterogeneous trees of source code.
 
 ## PowerShell
@@ -210,12 +217,9 @@
 * [PowerUpSQL](https://github.com/NetSPI/PowerUpSQL) - PowerUpSQL: A PowerShell Toolkit for Attacking SQL Server
 * [PowerSploit](https://github.com/PowerShellMafia/PowerSploit) - PowerSploit - A PowerShell Post-Exploitation Framework
 
-## Protocol Buffer
-
-* [pgoapi](https://github.com/tejado/pgoapi) - Pokemon Go API lib/demo
-
 ## Python
 
+* [tinder-detective](https://github.com/defaultnamehere/tinder-detective) - Find your Facebook friends' Tinder profiles. Don't actually use this by the way that's weird. Not even in a good way.
 * [Slack-Gitsin](https://github.com/yasintoy/Slack-Gitsin) - A beautiful Slack command line interface (CLI -> uses 20mb memory).
 * [barf-project](https://github.com/programa-stic/barf-project) - BARF : A multiplatform open source Binary Analysis and Reverse engineering Framework
 * [penetration](https://github.com/ym2011/penetration) - this is some pentest script based on python, just simple but useful, maybe it can help you do something else. just have a try
@@ -226,6 +230,7 @@
 * [PokemonGo-Map](https://github.com/AHAAAAAAA/PokemonGo-Map) - Live visualization of all the pokemon in your area... and more!
 * [BruteXSS](https://github.com/shawarkhanethicalhacker/BruteXSS) - BruteXSS - Cross-Site Scripting Bruteforcer
 * [monitorrent](https://github.com/werwolfby/monitorrent) - 
+* [pgoapi](https://github.com/tejado/pgoapi) - Pokemon Go API lib
 * [routersploit](https://github.com/reverse-shell/routersploit) - The Router Exploitation Framework
 * [TrumpScript](https://github.com/samshadwell/TrumpScript) - Make Python great again
 * [q](https://github.com/harelba/q) - q - Run SQL directly on CSV or TSV files
@@ -331,6 +336,7 @@
 
 ## Shell
 
+* [rancher](https://github.com/rancher/rancher) - A Platform for Operating Docker in Production
 * [git-extras](https://github.com/tj/git-extras) - GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
 * [docker-gitlab](https://github.com/sameersbn/docker-gitlab) - Dockerized GitLab
 * [wifi-password](https://github.com/rauchg/wifi-password) - Get the password of the wifi you're on (bash)
