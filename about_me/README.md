@@ -16,6 +16,7 @@
     - [Haskell](#haskell)
     - [Java](#java)
     - [JavaScript](#javascript)
+    - [Jupyter Notebook](#jupyter notebook)
     - [Makefile](#makefile)
     - [Others](#others)
     - [PHP](#php)
@@ -43,12 +44,15 @@
 
 ## C++
 
+* [lepton](https://github.com/dropbox/lepton) - Lepton is a tool and file format for losslessly compressing JPEGs by an average of 22%.
 * [electron](https://github.com/electron/electron) - Build cross platform desktop apps with JavaScript, HTML, and CSS
 * [protobuf](https://github.com/google/protobuf) - Protocol Buffers - Google's data interchange format
 * [tensorflow](https://github.com/tensorflow/tensorflow) - Computation using data flow graphs for scalable machine learning
 
 ## CSS
 
+* [hackathon-starter](https://github.com/sahat/hackathon-starter) - A boilerplate for Node.js web applications
+* [hubpress.io](https://github.com/HubPress/hubpress.io) - A web application to build your blog on GitHub
 * [You-Dont-Need-Javascript](https://github.com/NamPNQ/You-Dont-Need-Javascript) - Css is powerful, you can do a lot of things without js.
 
 ## CoffeeScript
@@ -69,10 +73,15 @@
 
 ## Go
 
+* [es](https://github.com/tj/es) - Elasticsearch stats CLI
+* [terraform](https://github.com/hashicorp/terraform) - Terraform is a tool for building, changing, and combining infrastructure safely and efficiently.
+* [elvish](https://github.com/elves/elvish) - A novel Unix shell
+* [build-web-application-with-golang](https://github.com/astaxie/build-web-application-with-golang) - A golang ebook intro how to build a web with golang
+* [gtm](https://github.com/git-time-metric/gtm) - Simple, seamless, lightweight time tracking for all your git projects
 * [retry](https://github.com/Rican7/retry) - A simple, stateless, functional mechanism to perform actions repetitively until successful.
 * [hub](https://github.com/github/hub) - hub helps you win at git.
 * [traefik](https://github.com/containous/traefik) - Træfɪk, a modern reverse proxy
-* [orgalorg](https://github.com/reconquest/orgalorg) - Next generation parallel SSH and file synchronization tool
+* [orgalorg](https://github.com/reconquest/orgalorg) - Parallel SSH commands executioner and file synchronization tool
 * [work](https://github.com/gocraft/work) - Process background jobs in Go
 * [pget](https://github.com/Code-Hex/pget) - Parallel file download client
 * [integram](https://github.com/Requilence/integram) - Integrate Telegram into your workflow – https://integram.org
@@ -80,7 +89,7 @@
 * [tinycron](https://github.com/bcicen/tinycron) - A very small replacement for cron
 * [advanced-ssh-config](https://github.com/moul/advanced-ssh-config) - :computer: assh: ssh wrapper using ProxyCommand that adds regex, aliases, gateways, includes, dynamic hostnames to SSH and ssh-config
 * [hugo](https://github.com/spf13/hugo) - A Fast and Flexible Static Site Generator built with love in GoLang
-* [rclone](https://github.com/ncw/rclone) - Sync files to and from Google Drive, Amazon Drive, S3, Dropbox, Backblaze B2, One Drive, Swift, Hubic, Cloudfiles, Google Cloud Storage, Yandex Files
+* [rclone](https://github.com/ncw/rclone) - "rsync for cloud storage" - Google Drive, Amazon Drive, S3, Dropbox, Backblaze B2, One Drive, Swift, Hubic, Cloudfiles, Google Cloud Storage, Yandex Files
 * [godepq](https://github.com/google/godepq) - 
 * [consul](https://github.com/hashicorp/consul) - Consul is a tool for service discovery, monitoring and configuration.
 * [hypercli](https://github.com/hyperhq/hypercli) - Hyper_ client for Mac OSx/Linux
@@ -90,10 +99,10 @@
 * [golearn](https://github.com/sjwhitworth/golearn) - Machine Learning for Go
 * [caddy](https://github.com/mholt/caddy) - Fast, cross-platform HTTP/2 web server with automatic HTTPS
 * [teleport](https://github.com/gravitational/teleport) - SSH infrastructure for clusters and teams. Want to chat/see a demo? mailto:info@gravitational.com
-* [lantern](https://github.com/getlantern/lantern) - :zap: Open Internet for everyone. Lantern is a free desktop application that delivers fast, reliable and secure access to the open Internet for users in censored regions. It uses a variety of techniques to stay unblocked, including P2P and domain fronting. Lantern relies on users in uncensored regions acting as access points to the open Internet.
-* [gods](https://github.com/emirpasic/gods) - Go Data Structures. Containers, Sets, Lists, Stacks, Maps, BidiMaps, Trees, HashSet, TreeSet, ArrayList, SinglyLinkedList, DoublyLinkedList, LinkedListStack, ArrayStack, HashMap, TreeMap, HashBidiMap, TreeBidiMap, RedBlackTree, BinaryHeap, Comparator, Iterator, Enumerable, Sort
+* [lantern](https://github.com/getlantern/lantern) - :zap: Open Internet for everyone. Lantern is a free application that delivers fast, reliable and secure access to the open Internet for users in censored regions. It uses a variety of techniques to stay unblocked, including domain fronting, p2p, and pluggable transports.
+* [gods](https://github.com/emirpasic/gods) - Go Data Structures. Containers, Sets, Lists, Stacks, Maps, BidiMaps, Trees, HashSet, TreeSet, ArrayList, SinglyLinkedList, DoublyLinkedList, LinkedListStack, ArrayStack, HashMap, TreeMap, HashBidiMap, TreeBidiMap, RedBlackTree, BTree, BinaryHeap, Comparator, Iterator, Enumerable, Sort
 * [go](https://github.com/golang/go) - The Go programming language
-* [iris](https://github.com/kataras/iris) - The fastest web framework for Go in (THIS) earth
+* [iris](https://github.com/kataras/iris) - The fastest web framework for Go on (THIS) Earth.
 * [docker](https://github.com/docker/docker) - Docker - the open-source application container engine
 
 ## HTML
@@ -103,6 +112,10 @@
 
 ## Haskell
 
+* [git-annex](https://github.com/joeyh/git-annex) - manage large files with git
+* [incredible](https://github.com/nomeata/incredible) - The Incredible Proof Machine
+* [hledger](https://github.com/simonmichael/hledger) - The hledger command-line and web-based accounting tool, a Haskell rewrite of ledger.
+* [pandoc](https://github.com/jgm/pandoc) - Universal markup converter
 * [lamdu](https://github.com/lamdu/lamdu) - lamdu - towards the next generation IDE
 * [corrode](https://github.com/jameysharp/corrode) - C to Rust translator
 * [github-backup](https://github.com/joeyh/github-backup) - backs up everything github knows about a repository, to the repository
@@ -127,6 +140,20 @@
 
 ## JavaScript
 
+* [gatsby](https://github.com/gatsbyjs/gatsby) - Transform plain text into dynamic blogs and websites using React.js
+* [nightHawkResponse](https://github.com/biggiesmallsAG/nightHawkResponse) - Incident Response Forensic Framework
+* [pokemongo-webspoof](https://github.com/iam4x/pokemongo-webspoof) - 👾 Play Pokémon Go from your Mac
+* [fathom](https://github.com/mozilla/fathom) - A framework for extracting meaning from web pages
+* [Dex](https://github.com/PatMartin/Dex) - Dex : The data explorer.  A data visualization tool written in java/javafx capable of powerful ETL and publishing D3 and other HTML visualizations.
+* [hyperterm](https://github.com/zeit/hyperterm) - 
+* [gifify](https://github.com/vvo/gifify) - 😻 Convert any video file to an optimized animated GIF.
+* [webpack](https://github.com/webpack/webpack) - A bundler for javascript and friends. Packs many modules into a few bundled assets. Code Splitting allows to load parts for the application on demand. Through "loaders," modules can be CommonJs, AMD, ES6 modules, CSS, Images, JSON, Coffeescript, LESS, ... and your custom stuff.
+* [github-explorer](https://github.com/trungdq88/github-explorer) - Progressive Web Apps experiment
+* [slate](https://github.com/ianstormtaylor/slate) - A completely customizable framework for building rich text editors.
+* [SC_Js](https://github.com/gloomyson/SC_Js) - Classic RTS game using html5 canvas and javascript, only js codes, all copyrighted materials removed
+* [troll](https://github.com/thisandagain/troll) - Language sentiment analysis and neural networks... for trolls.
+* [cleave.js](https://github.com/nosir/cleave.js) - Format input text content when you are typing
+* [N1](https://github.com/nylas/N1) - :love_letter: An extensible desktop mail app built on the modern web.
 * [p_slides](https://github.com/munen/p_slides) - dead simple way to create semantic, nice to look at slides - without any dependencies
 * [netmonitor](https://github.com/awalGarg/netmonitor) - A Chrome extension which shows background network activity of web pages after they are loaded.
 * [listr](https://github.com/SamVerschueren/listr) - Terminal task list
@@ -150,10 +177,13 @@
 * [tips](https://github.com/git-tips/tips) - Most commonly used git tips and tricks.
 * [You-Dont-Know-JS](https://github.com/getify/You-Dont-Know-JS) - A book series on JavaScript. @YDKJS on twitter.
 * [Messer](https://github.com/mjkaufer/Messer) - :speech_balloon: Command-line messaging for Facebook Messenger
-* [N1](https://github.com/nylas/N1) - :love_letter: An extensible desktop mail app built on the modern web.
 * [500lines](https://github.com/aosabook/500lines) - 500 Lines or Less
 * [cssx](https://github.com/krasimir/cssx) - CSS in JavaScript
 * [javascript](https://github.com/airbnb/javascript) - JavaScript Style Guide
+
+## Jupyter Notebook
+
+* [Probabilistic-Programming-and-Bayesian-Methods-for-Hackers](https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers) - aka "Bayesian Methods for Hackers": An introduction to Bayesian methods + probabilistic programming with a computation/understanding-first, mathematics-second point of view. All in pure Python ;)
 
 ## Makefile
 
@@ -161,6 +191,9 @@
 
 ## Others
 
+* [api-guidelines](https://github.com/Microsoft/api-guidelines) - Microsoft REST API Guidelines
+* [security-guide-for-developers](https://github.com/FallibleInc/security-guide-for-developers) - Security Guide for Developers
+* [dl_tutorials](https://github.com/sjchoi86/dl_tutorials) - Deep learning tutorials (2nd ed.)
 * [awesome-electron](https://github.com/sindresorhus/awesome-electron) - Useful resources for creating apps with Electron
 * [gitignore](https://github.com/github/gitignore) - A collection of useful .gitignore templates
 * [HEAD](https://github.com/joshbuchea/HEAD) - A list of everything that could go in the <head> of your document
@@ -175,14 +208,41 @@
 
 ## Perl
 
+* [lua-resty-auto-ssl](https://github.com/GUI/lua-resty-auto-ssl) - On the fly (and free) SSL registration and renewal inside OpenResty/nginx with Let's Encrypt.
 * [ack2](https://github.com/petdance/ack2) - ack 2.0 is a greplike tool optimized for programmers searching large heterogeneous trees of source code.
 
 ## PowerShell
 
+* [WiFi-Password](https://github.com/RReverser/WiFi-Password) - People ask you for the Wi-Fi password. Answer quickly.
+* [PowerUpSQL](https://github.com/NetSPI/PowerUpSQL) - PowerUpSQL: A PowerShell Toolkit for Attacking SQL Server
 * [PowerSploit](https://github.com/PowerShellMafia/PowerSploit) - PowerSploit - A PowerShell Post-Exploitation Framework
 
 ## Python
 
+* [tinder-detective](https://github.com/defaultnamehere/tinder-detective) - Find your Facebook friends' Tinder profiles. Don't actually use this by the way that's weird. Not even in a good way.
+* [Slack-Gitsin](https://github.com/yasintoy/Slack-Gitsin) - A beautiful Slack command line interface (CLI -> uses 20mb memory).
+* [barf-project](https://github.com/programa-stic/barf-project) - BARF : A multiplatform open source Binary Analysis and Reverse engineering Framework
+* [penetration](https://github.com/ym2011/penetration) - this is some pentest script based on python, just simple but useful, maybe it can help you do something else. just have a try
+* [transitions](https://github.com/tyarkoni/transitions) - A lightweight, object-oriented finite state machine implementation in Python
+* [grequests](https://github.com/kennethreitz/grequests) - Requests + Gevent = <3
+* [pokelocater](https://github.com/emeth-/pokelocater) - Display pokemon nearby to your location on a map.
+* [Matroschka](https://github.com/fgrimme/Matroschka) - Python steganography tool to hide images or text in images
+* [PokemonGo-Map](https://github.com/AHAAAAAAA/PokemonGo-Map) - Live visualization of all the pokemon in your area... and more!
+* [BruteXSS](https://github.com/shawarkhanethicalhacker/BruteXSS) - BruteXSS - Cross-Site Scripting Bruteforcer
+* [monitorrent](https://github.com/werwolfby/monitorrent) - 
+* [pgoapi](https://github.com/tejado/pgoapi) - Pokemon Go API lib
+* [routersploit](https://github.com/reverse-shell/routersploit) - The Router Exploitation Framework
+* [TrumpScript](https://github.com/samshadwell/TrumpScript) - Make Python great again
+* [q](https://github.com/harelba/q) - q - Run SQL directly on CSV or TSV files
+* [gym](https://github.com/openai/gym) - A toolkit for developing and comparing reinforcement learning algorithms.
+* [sympy](https://github.com/sympy/sympy) - A computer algebra system written in pure Python
+* [Dshell](https://github.com/USArmyResearchLab/Dshell) - Dshell is a network forensic analysis framework.
+* [maybe](https://github.com/p-e-w/maybe) - :open_file_folder: :rabbit2: :tophat: See what a program does before deciding whether you really want it to happen.
+* [mitmproxy](https://github.com/mitmproxy/mitmproxy) - An interactive SSL-capable intercepting HTTP proxy for penetration testers and software developers
+* [python-patterns](https://github.com/faif/python-patterns) - A collection of design patterns/idioms in Python
+* [big-list-of-naughty-strings](https://github.com/minimaxir/big-list-of-naughty-strings) - The Big List of Naughty Strings is a list of strings which have a high probability of causing issues when used as user-input data.
+* [smartcsv](https://github.com/santiagobasulto/smartcsv) - CSVs are awesome, yet they're pretty dumb. Let's get them smarter!
+* [ipython](https://github.com/ipython/ipython) - Official repository for IPython itself. Other repos in the IPython organization contain things like the website, documentation builds, etc.
 * [ML-lib](https://github.com/christopherjenness/ML-lib) - An extensive machine learning library, made from scratch (Python).
 * [ggrc-core](https://github.com/google/ggrc-core) - GGRC Core
 * [caravel](https://github.com/airbnb/caravel) - Caravel is a data exploration platform designed to be visual, intuitive, and interactive
@@ -276,7 +336,23 @@
 
 ## Shell
 
-* [MARA_Framework](https://github.com/xtiankisutsa/MARA_Framework) - MARA is a Mobile Application Reverse engineering and Analysis Framework. It is a toolkit that puts together commonly used mobile application reverse engineering tools, in order to make the task of reverse engineering and analysis easier and friendlier to mobile application developers and security professionals.
+* [rancher](https://github.com/rancher/rancher) - A Platform for Operating Docker in Production
+* [git-extras](https://github.com/tj/git-extras) - GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
+* [docker-gitlab](https://github.com/sameersbn/docker-gitlab) - Dockerized GitLab
+* [wifi-password](https://github.com/rauchg/wifi-password) - Get the password of the wifi you're on (bash)
+* [commit](https://github.com/enkidevs/commit) - Level up your dev skills every day.
+* [pi-hole](https://github.com/pi-hole/pi-hole) - A black hole for Internet advertisements (designed for Raspberry Pi)
+* [quickinstall](https://github.com/jgamblin/quickinstall) - A Shell Script To Take Care Of Ubuntu Basics
+* [crowbar](https://github.com/crowbar/crowbar) - Cloud Operations Platform
+* [git-fire](https://github.com/qw3rtman/git-fire) - :fire: Save Your Code in an Emergency
+* [JSON.sh](https://github.com/dominictarr/JSON.sh) - a pipeable JSON parser written in Bash
+* [c](https://github.com/ryanmjacobs/c) - Compile and execute C "scripts" in one go!
+* [todo.txt-cli](https://github.com/ginatrapani/todo.txt-cli) - A simple and extensible shell script for managing your todo.txt file.
+* [fasd](https://github.com/clvv/fasd) - Command-line productivity booster, offers quick access to files and directories, inspired by autojump, z and v.
+* [git-standup](https://github.com/kamranahmedse/git-standup) - Recall what you did on the last working day. Psst! or be nosy and find what someone else in your team did ;-)
+* [githug](https://github.com/Gazler/githug) - Git your game on!
+* [spark](https://github.com/holman/spark) - ▁▂▃▅▂▇ in your shell.
+* [MARA_Framework](https://github.com/xtiankisutsa/MARA_Framework) - MARA is a Mobile Application Reverse engineering and Analysis Framework. It is a toolkit that puts together commonly used mobile application reverse engineering and analysis tools to assist in testing mobile applications against the OWASP mobile security  threats.
 * [docker-gc](https://github.com/spotify/docker-gc) - Docker garbage collection of containers and images
 * [trigger](https://github.com/sharkdp/trigger) - Run a user-defined command on file changes
 * [bash-script-template](https://github.com/ralish/bash-script-template) - A best practices Bash script template with many useful functions

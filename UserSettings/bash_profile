@@ -1,13 +1,14 @@
 # ~/.bashrc made by Theo Massard
 
 # @env variables
-export GITHUB_CONFIG=/THEO/github/MyConfiguration/
+export GITHUB_CONFIG=/THEO/github/MyConfiguration
 export HISTFILESIZE=20000
 export HISTSIZE=10000
-export HISTIGNORE="&:ls:[bf]g:exit"
+export HISTIGNORE="&:ls:[bf]g:exit:l:h"
 export GOPATH=~/work
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
+export CHEATCOLORS=true
 
 # @z opti cd
 . ~/.z_config/z.sh
@@ -17,16 +18,16 @@ shopt -s histappend
 shopt -s cmdhist
 
 # @mistake files
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+alias rm='rm -i' # @M.F
+alias cp='cp -i' # @M.F
+alias mv='mv -i' # @M.F
 
 # @prompt simple
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u @ VM_1 - 2222 \[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # @opti permissions
-alias chx="chmod 755"
-alias chr="chmod 644"
+alias chx="chmod 755" # @O.P
+alias chr="chmod 644" # @O.P
 
 function opti_perm() {
     {
@@ -37,78 +38,42 @@ function opti_perm() {
 }
 
 # @opti conf
-alias SB="emacs ~/.bashrc; source ~/.bashrc"
-alias SE="emacs ~/.emacs.d/init.el"
-
-function opti_config() {
-    {
-	echo "configuration optimisation:"
-	echo "SB    = \"emacs ~/.bashrc; source ~/.bashrc\""
-	echo "SE    = \"emacs ~/.emacs.d/init.el\""
-    }
-}
+alias SB="emacs ~/.bashrc; source ~/.bashrc" # @O.C
+alias SE="emacs ~/.emacs.d/init.el" # @O.C
 
 # @opti basic
-alias e="emacs"
-alias j="jobs"
-alias c="cat"
-alias g="git"
-alias sv="service"
-alias cu="curl"
-alias root='sudo -i' # Become root
-alias h="history"
+alias e="emacs" # @O.B
+alias j="jobs" # @O.B
+alias c="cat" # @O.B
+alias g="git" # @O.B
+alias sv="service" # @O.B
+alias cu="curl" # @O.B
+alias root='sudo -i' # @O.B Become root
+alias h="history" # @O.B
+alias wtfa="wtfaliases" # @O.B
+alias tuc="top_used_commands"
 
-function opti_basic_info() {
-    {
-	echo "basic optimisation aliases:"
-	echo "e    = emacs"
-	echo "j    = jobs"
-	echo "c    = cat"
-	echo "g    = git"
-	echo "sv   = service"
-	echo "cu   = curl"
-	echo "root = sudo -i"
-    }
+function wtfaliases() {
+    echo "Your aliases that contains $1 are:"
+    echo
+    pygmentize -g ~/.bashrc | grep -C 1 $1
 }
 
 # @opti docker
-alias dk="docker"
-alias DC="docker-compose"
-alias DCB="docker-compose build"
-alias DCU="docker-compose up -d"
-alias DRB="docker-compose up -d --build; ./init_databases.sh --deploy"
-alias REB="DCB && DCU && ./init_databases.sh --deploy"
-alias RUI="remove_untagged_images"
-
-function opti_docker() {
-    {
-	echo "docker optimisation aliases:"
-	echo "dk    = docker"
-	echo "DC    = docker-compose"
-	echo "DCB   = docker-compose build"
-	echo "DCU   = docker-compose up -d"
-	echo "DRB   = docker-compose up -d; ./init-databses.sh --deploy"
-	echo "REB   = DCB && DCU && ./init_databases.sh --deploy"
-	echo "RUI   = remove_untagged_images"
-    }
-}
+alias dk="docker" # @O.D
+alias DC="docker-compose" # @O.D
+alias DCB="docker-compose build" # @O.D
+alias DCU="docker-compose up -d" # @O.D
+alias DRB="docker-compose up -d --build; ./init_databases.sh --deploy" # @O.D
+alias REB="DCB && DCU && ./init_databases.sh --deploy" # @O.D
+alias RUI="remove_untagged_images" # @O.D
 
 # @ls tunings
-alias ls="ls --color"
-alias l="ls"
-alias ll="ls -l"
-alias la="ls -a"
-alias lsh='ls -lhXG' # long listing, human-readable, sort by extension, do not show group info
-
-function ls_aliases() {
-    {
-	echo "ls aliases:"
-	echo "ls   = ls --color"
-	echo "l    = ls"
-	echo "la   = ls -a"
-	echo "lsh  = ls -lhXG (long listing, sorts by extension, no group info)"
-    }
-}
+alias ls="ls --color" # @LS
+alias l="ls" # @LS
+alias ll="ls -l" # @LS
+alias la="ls -a" # @LS
+alias lsh='ls -lhXG' # @LS long listing, human-readable, sort by extension, do not show group info
 
 function lc() {
     cd $1
@@ -116,18 +81,20 @@ function lc() {
 }
 
 # @output management
-alias less='less -FSRX'
-alias G=" | grep"
+alias less='less -FSRX' # @O.M
+alias G=" | grep" # @O.M
 
-# @network
-alias ports="netstat -tulanp" # shows open ports
+# @opti network
+alias ports="netstat -tulanp" # @O.N shows open ports
 
 # @github general
-alias ga="git add"
-alias gp="git push"
-alias gc="git commit -m"
-alias gl="git pull"
-alias gs="git status"
+alias ga="git add" # @G.G
+alias gp="git push" # @G.G
+alias gc="git commit -m" # @G.G
+alias gl="git pull" # @G.G
+alias gs="git status" # @G.G
+alias gst="git status" # @G.G
+alias gsmu="git submodule foreach git pull origin master" # @G.G
 
 function github_general() {
     {
@@ -140,9 +107,10 @@ function github_general() {
     }
 }
 # @github user
-alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG;"
-alias save_inputrc="cp ~/.inputrc $GITHUB_CONFIG/UserSettings/inputrc; cd $GITHUB_CONFIG;"
-alias save_git_stars="python /THEO/github/starred/starred.py --username massard-t --sort"
+alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG;" # @G.U
+alias save_inputrc="cp ~/.inputrc $GITHUB_CONFIGU/serSettings/inputrc; cd $GITHUB_CONFIG;" # @G.U
+alias save_git_stars="python /THEO/github/starred/starred.py --username massard-t --sort" # @G.U
+alias save_emacs="cp ~/.emacs.d/init.el $GITHUB_CONFIG/emacs/init.el; cd $GITHUB_CONFIG;" # @G.U
 
 function github_user() {
     {
