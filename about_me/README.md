@@ -40,10 +40,12 @@
 
 ## C#
 
+* [NecroBot](https://github.com/NecronomiconCoding/NecroBot) - a Pokemon Go Bot based on Rocket API
 * [choco](https://github.com/chocolatey/choco) - Chocolatey CLI
 
 ## C++
 
+* [RedisDesktopManager](https://github.com/uglide/RedisDesktopManager) - :wrench: Cross-platform GUI management tool for Redis
 * [lepton](https://github.com/dropbox/lepton) - Lepton is a tool and file format for losslessly compressing JPEGs by an average of 22%.
 * [electron](https://github.com/electron/electron) - Build cross platform desktop apps with JavaScript, HTML, and CSS
 * [protobuf](https://github.com/google/protobuf) - Protocol Buffers - Google's data interchange format
@@ -102,7 +104,7 @@
 * [lantern](https://github.com/getlantern/lantern) - :zap: Open Internet for everyone. Lantern is a free application that delivers fast, reliable and secure access to the open Internet for users in censored regions. It uses a variety of techniques to stay unblocked, including domain fronting, p2p, and pluggable transports.
 * [gods](https://github.com/emirpasic/gods) - Go Data Structures. Containers, Sets, Lists, Stacks, Maps, BidiMaps, Trees, HashSet, TreeSet, ArrayList, SinglyLinkedList, DoublyLinkedList, LinkedListStack, ArrayStack, HashMap, TreeMap, HashBidiMap, TreeBidiMap, RedBlackTree, BTree, BinaryHeap, Comparator, Iterator, Enumerable, Sort
 * [go](https://github.com/golang/go) - The Go programming language
-* [iris](https://github.com/kataras/iris) - The fastest web framework for Go on (THIS) Earth.
+* [iris](https://github.com/kataras/iris) - The fastest web framework for Go in (THIS) Earth.
 * [docker](https://github.com/docker/docker) - Docker - the open-source application container engine
 
 ## HTML
@@ -191,6 +193,8 @@
 
 ## Others
 
+* [notation](https://github.com/hypotext/notation) - Collection of quotes on interesting notations & how they affect thought.
+* [functional-programming-jargon](https://github.com/hemanth/functional-programming-jargon) - Jargon from the functional programming world in simple terms!
 * [api-guidelines](https://github.com/Microsoft/api-guidelines) - Microsoft REST API Guidelines
 * [security-guide-for-developers](https://github.com/FallibleInc/security-guide-for-developers) - Security Guide for Developers
 * [dl_tutorials](https://github.com/sjchoi86/dl_tutorials) - Deep learning tutorials (2nd ed.)
@@ -227,7 +231,7 @@
 * [grequests](https://github.com/kennethreitz/grequests) - Requests + Gevent = <3
 * [pokelocater](https://github.com/emeth-/pokelocater) - Display pokemon nearby to your location on a map.
 * [Matroschka](https://github.com/fgrimme/Matroschka) - Python steganography tool to hide images or text in images
-* [PokemonGo-Map](https://github.com/AHAAAAAAA/PokemonGo-Map) - Live visualization of all the pokemon in your area... and more!
+* [PokemonGo-Map](https://github.com/AHAAAAAAA/PokemonGo-Map) - 🌏 Live visualization of all the pokemon in your area... and more!
 * [BruteXSS](https://github.com/shawarkhanethicalhacker/BruteXSS) - BruteXSS - Cross-Site Scripting Bruteforcer
 * [monitorrent](https://github.com/werwolfby/monitorrent) - 
 * [pgoapi](https://github.com/tejado/pgoapi) - Pokemon Go API lib
@@ -251,7 +255,7 @@
 * [firminator_backend](https://github.com/misterch0c/firminator_backend) - The first open source vulnerability scanner for firmwares
 * [PytheM](https://github.com/m4n3dw0lf/PytheM) - PytheM - Python penetration testing framework
 * [Lango](https://github.com/ayoungprogrammer/Lango) - Language Lego
-* [starred](https://github.com/maguowei/starred) - GitHub starred: make your own awesome lists page by GitHub star!
+* [starred](https://github.com/maguowei/starred) - creating your own Awesome List!
 * [asciinema](https://github.com/asciinema/asciinema) - Terminal session recorder
 * [shutit](https://github.com/ianmiell/shutit) - Automation framework for programmers
 * [weevely3](https://github.com/epinna/weevely3) - Weaponized web shell
@@ -303,6 +307,7 @@
 
 ## Ruby
 
+* [worque](https://github.com/huynhquancam/worque) - Manage your daily notes like a bosssss
 * [PokemonHook](https://github.com/rpplusplus/PokemonHook) - 
 * [linguist](https://github.com/github/linguist) - Language Savant. If your repository's language is being reported incorrectly, send us a pull request!
 * [guides](https://github.com/thoughtbot/guides) - A guide for programming in style.
