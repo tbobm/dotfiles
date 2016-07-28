@@ -91,7 +91,7 @@ alias gl="git pull" # @G.G
 alias gs="git status" # @G.G
 alias gst="git status" # @G.G
 alias gsmu="git submodule foreach git pull origin master" # @G.G
-alias gm="git move" # @G.G
+alias gm="git mv" # @G.G
 
 # @github user
 alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG;" # @G.U
