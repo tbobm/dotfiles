@@ -9,6 +9,7 @@ export GOPATH=~/work
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 export CHEATCOLORS=true
+export WINDOWS="10.0.2.2"
 
 # @z opti cd
 . ~/.z_config/z.sh
@@ -43,13 +44,16 @@ alias cu="curl" # @O.B
 alias root='sudo -i' # @O.B Become root
 alias h="history" # @O.B
 alias wtfa="wtfaliases" # @O.B
-alias tuc="top_used_commands"
+alias tuc="top_used_commands" # @O.B
 
 function wtfaliases() {
     echo "Your aliases that contains $1 are:"
     echo
     pygmentize -g ~/.bashrc | grep -C 1 $1
 }
+
+# @opti system
+alias get_dir_size="du -sh" # @O.S prints size of directory
 
 # @opti docker
 alias dk="docker" # @O.D
@@ -87,6 +91,7 @@ alias gl="git pull" # @G.G
 alias gs="git status" # @G.G
 alias gst="git status" # @G.G
 alias gsmu="git submodule foreach git pull origin master" # @G.G
+alias gm="git move" # @G.G
 
 # @github user
 alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG;" # @G.U
@@ -134,7 +139,7 @@ function small_clock() {
 #    #printf "\n"   cputemp | head -1 | awk '{ printf "%s %s %s\n", $1, $2, $3 }'
 #    #cputemp | tail -1 | awk '{ printf "%s %s %s\n", $1, $2, $3 }'   #cputemp | awk '{ printf "%s %s", $1 $2 }' }'""''""''""''""''""''""''""''""}'
 #}
-export WINDOWS="10.0.2.2"
+
 function bashtips {
     {
 	echo "DIRECTORIES"
