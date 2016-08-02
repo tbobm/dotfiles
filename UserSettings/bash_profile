@@ -4,7 +4,7 @@
 export GITHUB_CONFIG=/THEO/github/MyConfiguration
 export HISTFILESIZE=20000
 export HISTSIZE=10000
-export HISTIGNORE="&:ls:[bf]g:exit:l:h"
+export HISTIGNORE="&:ls:[bf]g:exit:l:h:cd"
 export GOPATH=~/work
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
@@ -92,6 +92,10 @@ alias gs="git status" # @G.G
 alias gst="git status" # @G.G
 alias gsmu="git submodule foreach git pull origin master" # @G.G
 alias gm="git mv" # @G.G
+
+function parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
 
 # @github user
 alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG;" # @G.U
