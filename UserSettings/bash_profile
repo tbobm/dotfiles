@@ -43,12 +43,11 @@ alias sv="service" # @O.B
 alias cu="curl" # @O.B
 alias root='sudo -i' # @O.B Become root
 alias h="history" # @O.B
-alias wtfa="wtfaliases" # @O.B
+alias wt="wtfaliases" # @O.B
 alias tuc="top_used_commands" # @O.B
 
 function wtfaliases() {
     echo "Your aliases that contains $1 are:"
-    echo
     pygmentize -g ~/.bashrc | grep -C 1 $1
 }
 
@@ -72,10 +71,11 @@ alias REB="DCB && DCU && ./init_databases.sh --deploy" # @O.C
 
 # @ls tunings
 alias ls="ls --color" # @LS
-alias l="ls" # @LS
+alias l="ls --color=never" # @LS
 alias ll="ls -l" # @LS
 alias la="ls -a" # @LS
 alias lsh='ls -lhXG' # @LS long listing, human-readable, sort by extension, do not show group info
+alias "l-d"="ls -d */"
 
 function lc() {
     cd $1
@@ -201,4 +201,8 @@ function bashtips {
 	echo "M-! 	complete command name"
 	echo "M-^ 	complete history"
     }
+}
+
+function find_missing_file() {
+    find $1 -mindepth 2 -maxdepth 2 -type d '!' -exec test -e "{}/$2" ';' -print
 }
