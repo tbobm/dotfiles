@@ -1,0 +1,3 @@
+[submodule "my_emacs"]
+	path = my_emacs
+	url = https://github.com/massard-t/my_emacs
