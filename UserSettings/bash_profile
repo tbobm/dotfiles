@@ -1,7 +1,7 @@
 # ~/.bashrc made by Theo Massard
 
 # @env variables
-export GITHUB_CONFIG=/THEO/github/MyConfiguration
+export GITHUB_CONFIG=/root/MyConfiguration
 export HISTFILESIZE=20000
 export HISTSIZE=10000
 export HISTIGNORE="&:ls:[bf]g:exit:l:h:cd"
@@ -66,8 +66,8 @@ alias DPS="docker ps -a" # @O.D
 alias DC="docker-compose" # @O.C
 alias DCB="docker-compose build" # @O.C
 alias DCU="docker-compose up -d" # @O.C
-alias DRB="docker-compose up -d --build; ./init_databases.sh --deploy" # @O.C
-alias REB="DCB && DCU && ./init_databases.sh --deploy" # @O.C
+alias DRB="docker-compose up -d --build; ./init_containers.sh --deploy" # @O.C
+alias REB="DCB && DCU && ./init_containers.sh --deploy" # @O.C
 
 # @ls tunings
 alias ls="ls --color" # @LS
@@ -98,6 +98,8 @@ alias gs="git status" # @G.G
 alias gst="git status" # @G.G
 alias gsmu="git submodule foreach git pull origin master" # @G.G
 alias gm="git mv" # @G.G
+alias gS="git submodule" # @G.G
+alias gd="git diff" # @G.G
 
 function parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -206,3 +208,8 @@ function bashtips {
 function find_missing_file() {
     find $1 -mindepth 2 -maxdepth 2 -type d '!' -exec test -e "{}/$2" ';' -print
 }
+
+# TODO: Move every function inside other file and source it
+# TODO: Comment every function
+# TODO: Work on install script
+# TODO: Work on new_vm script
