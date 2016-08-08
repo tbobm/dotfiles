@@ -33,6 +33,7 @@ alias chr="chmod 644" # @O.P
 # @opti conf
 alias SB="emacs ~/.bashrc; source ~/.bashrc" # @O.C
 alias SE="emacs ~/.emacs.d/init.el" # @O.C
+alias ST="emacs ~/.tmux.conf; tmux source-file ~/.tmux.conf" # @O.C
 
 # @opti basic
 alias e="emacs" # @O.B
@@ -111,6 +112,7 @@ alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITH
 alias save_inputrc="cp ~/.inputrc $GITHUB_CONFIGU/serSettings/inputrc; cd $GITHUB_CONFIG;" # @G.U
 alias save_git_stars="python /THEO/github/starred/starred.py --username massard-t --sort" # @G.U
 alias save_emacs="cp ~/.emacs.d/init.el $GITHUB_CONFIG/emacs/init.el; cd $GITHUB_CONFIG;" # @G.U
+alias save_tmux="cp ~/.tmux.conf $GITHUB_CONFIG/UserSettings/tmux.conf; cd $GITHUB_CONFIG;" # @G.U
 
 # @miscellianous
 alias ".."="cd .."
