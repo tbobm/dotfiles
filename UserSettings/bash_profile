@@ -45,6 +45,7 @@ alias root='sudo -i' # @O.B Become root
 alias h="history" # @O.B
 alias wt="wtfaliases" # @O.B
 alias tuc="top_used_commands" # @O.B
+alias t="tmux" # @O.B
 
 function wtfaliases() {
     echo "Your aliases that contains $1 are:"
@@ -115,6 +116,7 @@ alias save_emacs="cp ~/.emacs.d/init.el $GITHUB_CONFIG/emacs/init.el; cd $GITHUB
 alias ".."="cd .."
 alias travel_in_paris="python /THEO/parikstra/parikstra.py"
 alias TU="top_used_commands"
+alias ungron="gron --ungron"
 
 function top_used_commands() { # prints the top 15 typed commands
     history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n15
