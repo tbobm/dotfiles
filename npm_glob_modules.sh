@@ -1,3 +1,5 @@
 #!/bin/sh
+NI="npm install --global"
 
-npm install --global git-recent
+$NI git-recent
+$NI diff-so-fancy
