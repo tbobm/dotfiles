@@ -95,6 +95,7 @@ alias ports="netstat -tulanp" # @O.N shows open ports
 alias ga="git add" # @G.G
 alias gp="git push" # @G.G
 alias gc="git commit -m" # @G.G
+alias gclone="git clone --recursive" # @G.G
 alias gl="git pull" # @G.G
 alias gs="git status" # @G.G
 alias gst="git status" # @G.G
