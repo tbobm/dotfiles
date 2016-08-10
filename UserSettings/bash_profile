@@ -58,6 +58,7 @@ alias get_dir_size="du -sh" # @O.S prints size of directory
 
 # @opti docker
 alias dk="docker" # @O.D
+alias dki="docker images" # @O.D
 alias DBT="docker build -t" # @O.D
 alias RUI="remove_untagged_images" # @O.D
 alias DR="docker run" # @O.D
