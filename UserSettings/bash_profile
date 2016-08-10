@@ -62,9 +62,10 @@ alias DBT="docker build -t" # @O.D
 alias RUI="remove_untagged_images" # @O.D
 alias DR="docker run" # @O.D
 alias DPS="docker ps -a" # @O.D
+alias de="docker exec" # @O.D
+alias di="docker exec -it" # @O.D
 
 # @opti docker-compose
-
 alias DC="docker-compose" # @O.C
 alias DCB="docker-compose build" # @O.C
 alias DCU="docker-compose up -d" # @O.C
