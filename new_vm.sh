@@ -20,7 +20,8 @@ function get_required_installer() {
 function get_configuration() {
     rm -rf ~/.emacs.d/
     git clone --recursive http://github.com/massard-t/my_emacs ~/.emacs.d/
-    echo ./UserSettings/bash_profile > ~/.bashrc
+    git clone --recursive http://github.com/massard-t/MyConfiguration ~/MyConfiguration
+    cp ~/Myconfiruation/UserSettings/bash_profile > ~/.bashrc
 }
 
 function install_dependencies() {
