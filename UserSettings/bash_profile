@@ -76,7 +76,7 @@ alias REB="DCB && DCU && ./init_containers.sh --deploy" # @O.C
 
 # @ls tunings
 alias ls="ls --color" # @LS
-alias l="ls --color=never" # @LS
+alias l="ls --color" # @LS
 alias ll="ls -l" # @LS
 alias la="ls -a" # @LS
 alias lsh='ls -lhXG' # @LS long listing, human-readable, sort by extension, do not show group info
