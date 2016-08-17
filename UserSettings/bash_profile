@@ -48,6 +48,7 @@ alias h="history" # @O.B
 alias wt="wtfaliases" # @O.B
 alias tuc="top_used_commands" # @O.B
 alias t="tmux" # @O.B
+alias ssh="sshrc" # @O.B
 
 function wtfaliases() {
     echo "Your aliases that contains $1 are:"
@@ -66,6 +67,7 @@ alias DR="docker run" # @O.D
 alias DPS="docker ps -a" # @O.D
 alias de="docker exec" # @O.D
 alias di="docker exec -it" # @O.D
+alias remove_untagged_images="docker images | grep '<none>' | grep -P '[1234567890abcdef]{12}' -o | xargs -L1 docker rmi" # @O.D
 
 # @opti docker-compose
 alias DC="docker-compose" # @O.C
@@ -114,7 +116,7 @@ function parse_git_branch() {
 # @github user
 alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG;" # @G.U
 alias save_inputrc="cp ~/.inputrc $GITHUB_CONFIGU/serSettings/inputrc; cd $GITHUB_CONFIG;" # @G.U
-alias save_git_stars="python /THEO/github/starred/starred.py --username massard-t --sort" # @G.U
+alias save_git_stars="starred --username massard-t --sort" # @G.U
 alias save_emacs="cp ~/.emacs.d/init.el $GITHUB_CONFIG/emacs/init.el; cd $GITHUB_CONFIG;" # @G.U
 alias save_tmux="cp ~/.tmux.conf $GITHUB_CONFIG/UserSettings/tmux.conf; cd $GITHUB_CONFIG;" # @G.U
 
@@ -123,6 +125,7 @@ alias ".."="cd .."
 alias travel_in_paris="python /THEO/parikstra/parikstra.py"
 alias TU="top_used_commands"
 alias ungron="gron --ungron"
+alias scratch="cd /tmp"
 
 function top_used_commands() { # prints the top 15 typed commands
     history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n15
