@@ -127,6 +127,10 @@ alias TU="top_used_commands"
 alias ungron="gron --ungron"
 alias scratch="cd /tmp"
 
+function replace_every_string() {
+    egrep -lRZ "$1" . | xargs -0 -l sed -i -e "s/$1/$2/g"
+}
+
 function top_used_commands() { # prints the top 15 typed commands
     history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n15
 }
@@ -224,3 +228,6 @@ function find_missing_file() {
 # TODO: Comment every function
 # TODO: Work on install script
 # TODO: Work on new_vm script
+
+### Custom aliases (auto-completion)
+eval $(thefuck --alias)
