@@ -258,9 +258,3 @@ function find_missing_file() {
 
 ### Custom aliases (auto-completion)
 eval $(thefuck --alias)
-
-
-if [ -f ~/.custom_profile.sh ];
-then
-    source ~/.custom_profile.sh
-fi
