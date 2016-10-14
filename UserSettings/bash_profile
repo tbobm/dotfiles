@@ -11,6 +11,7 @@ export PATH=$PATH:$GOBIN
 export CHEATCOLORS=true
 export WINDOWS="10.0.2.2"
 export PATH=$PATH:/usr/local/go/bin
+export EDITOR=vim
 
 # @z opti cd
 . /home/theo/etc/github/clones/z/z.sh
