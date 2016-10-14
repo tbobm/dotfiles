@@ -5,11 +5,12 @@ export GITHUB_CONFIG=/home/theo/etc/github/perso/MyConfiguration
 export HISTFILESIZE=20000
 export HISTSIZE=10000
 export HISTIGNORE="&:ls:[bf]g:exit:l:h:cd"
-export GOPATH=~/work
+export GOPATH=/home/theo/usr/w/work
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 export CHEATCOLORS=true
 export WINDOWS="10.0.2.2"
+export PATH=$PATH:/usr/local/go/bin
 
 # @z opti cd
 . /home/theo/etc/github/clones/z/z.sh

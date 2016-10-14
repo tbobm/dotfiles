@@ -1,6 +1,6 @@
 set nocompatible	" required
 filetype off		" required
-" set the runtime path to include Vundle and initialize
+"the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -17,9 +17,6 @@ Plugin 'gmarik/Vundle.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-Plugin 'jnurmine/Zenburn'
-Plugin 'altercation/vim-colors-solarized'
-
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
@@ -30,22 +27,77 @@ Plugin 'tmhedberg/SimpylFold'
 " Allows to see Doctstring in folded code
 let g:SimpylFold_docstring_preview=1
 
+" Code
+set encoding=utf-8
+
 " Python
 " Linting (pep8)
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+au BufNewFile,BufRead *.py set
+    \ tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ textwidth=79
+    \ expandtab
+    \ autoindent
+    \ fileformat=unix
+
+" Custom Python Indentation
+Plugin 'vim-scripts/indentpython.vim'
+
+" Uneceessary whitespaces
+highlight BadWhitespace ctermbg=red guibg=red
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+Plugin 'Valloric/YouCompleteMe'
+
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Syntax Highlighting
+Plugin 'scrooloose/syntastic'
+
+" Lint Highlighting
+Plugin 'nvie/vim-flake8'
+
+let python_highlight_all=1
+syntax on
 
 
 " Web
 " Linting (basic)
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+au BufNewFile,BufRead *.js, *.html, *.css set
+    \ tabstop=2
+    \ softtabstop=2
+    \ shiftwidth=2
 
+" Color Schemes
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
+
+" Logic linked to Color Schemes
+if has('gui_running')
+  set background=dark
+  colorscheme solarized
+else
+  colorscheme zenburn
+endif
+
+" Toggle solarized background
+call togglebg#map("<F5>")
+
+" NERDTree
+Plugin 'scrooloose/nerdtree'
+
+" Plugin 'jistr/vim-nerdtree-tabs'
+
+" Ignore .pyc files
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
+" Line Numbering
+set nu
+
+" Git commands inside vim
+Plugin 'tpope/vim-fugitive'
+
+" Powerline
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
