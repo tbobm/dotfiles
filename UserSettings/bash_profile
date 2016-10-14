@@ -1,7 +1,7 @@
 # ~/.bashrc made by Theo Massard
 
 # @env variables
-export GITHUB_CONFIG=/root/MyConfiguration
+export GITHUB_CONFIG=/home/theo/etc/github/perso/MyConfiguration
 export HISTFILESIZE=20000
 export HISTSIZE=10000
 export HISTIGNORE="&:ls:[bf]g:exit:l:h:cd"
@@ -12,7 +12,7 @@ export CHEATCOLORS=true
 export WINDOWS="10.0.2.2"
 
 # @z opti cd
-. ~/.z_config/z.sh
+. /home/theo/etc/github/clones/z/z.sh
 
 # @history management
 shopt -s histappend
@@ -39,13 +39,14 @@ function opti_perm() {
 }
 
 # @opti conf
-alias SB="emacs ~/.bashrc; source ~/.bashrc" # @O.C
-alias SE="emacs ~/.emacs.d/init.el" # @O.C
-alias ST="emacs ~/.tmux.conf; tmux source-file ~/.tmux.conf" # @O.C
-alias todo="emacs ~/todo.org" # @O.C
+alias SB="vim ~/.bashrc; source ~/.bashrc" # @O.C
+alias SV="vim ~/.vimrc" # @O.C
+alias ST="vim ~/.tmux.conf; tmux source-file ~/.tmux.conf" # @O.C
+alias todo="vim ~/todo.org" # @O.C
 
 # @opti basic
-alias e="emacs" # @O.B
+alias v="vim" # @O.B
+alias vi="vim" # @O.B
 alias j="jobs" # @O.B
 alias c="cat" # @O.B
 alias g="git" # @O.B
@@ -135,7 +136,7 @@ function github_general() {
 alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG;" # @G.U
 alias save_inputrc="cp ~/.inputrc $GITHUB_CONFIGU/serSettings/inputrc; cd $GITHUB_CONFIG;" # @G.U
 alias save_git_stars="starred --username massard-t --sort" # @G.U
-alias save_emacs="cp ~/.emacs.d/init.el $GITHUB_CONFIG/emacs/init.el; cd $GITHUB_CONFIG;" # @G.U
+alias save_vim="cp ~/.vim.d/init.el $GITHUB_CONFIG/vim/init.el; cd $GITHUB_CONFIG;" # @G.U
 alias save_tmux="cp ~/.tmux.conf $GITHUB_CONFIG/UserSettings/tmux.conf; cd $GITHUB_CONFIG;" # @G.U
 
 function github_user() {
