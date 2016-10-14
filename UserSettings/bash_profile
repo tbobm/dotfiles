@@ -119,6 +119,8 @@ alias gsmu="git submodule foreach git pull origin master" # @G.G
 alias gm="git mv" # @G.G
 alias gS="git submodule" # @G.G
 alias gd="git diff" # @G.G
+alias gf="git fetch" # @G.G
+alias gb="git branch" # @G.G
 
 function parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
