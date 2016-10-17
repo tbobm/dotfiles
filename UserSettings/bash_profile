@@ -60,7 +60,7 @@ alias wt="wtfaliases" # @O.B
 alias tuc="top_used_commands" # @O.B
 alias t="tmux" # @O.B
 alias ssh="sshrc" # @O.B
-alias reload_baash="source ~/.bashrc" # @O.B
+alias reload_bash="source ~/.bashrc" # @O.B
 
 function wtfaliases() {
     echo "Your aliases that contains $1 are:"
