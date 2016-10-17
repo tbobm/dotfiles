@@ -14,7 +14,10 @@ export PATH=$PATH:/usr/local/go/bin:/usr/local/go
 export EDITOR=vim
 
 # @z opti cd
-. /home/theo/etc/github/clones/z/z.sh
+if [ -f /home/theo/etc/github/clones/z/z.sh ];
+then
+    . /home/theo/etc/github/clones/z/z.sh
+fi
 
 # @history management
 shopt -s histappend
@@ -263,4 +266,7 @@ function find_missing_file() {
 # TODO: Work on new_vm script
 
 ### Custom aliases (auto-completion)
-eval $(thefuck --alias)
+if [ type -p thfuck &> /dev/null ];
+then
+    eval $(thefuck --alias)
+fi
