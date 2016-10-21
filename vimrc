@@ -71,7 +71,7 @@ au BufNewFile,BufRead *.js, *.html, *.css set
     \ shiftwidth=2
 
 " Color Schemes
-Plugin 'jnurmine/Zenburn'
+" Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 
 " Logic linked to Color Schemes
@@ -101,3 +101,12 @@ Plugin 'tpope/vim-fugitive'
 
 " Powerline
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+" Markdown
+Plugin 'tpope/vim-markdown'
+
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+
+" Docker
+Plugin 'ekalinin/dockerfile.vim'
