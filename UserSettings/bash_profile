@@ -12,9 +12,13 @@ export CHEATCOLORS=true
 export WINDOWS="10.0.2.2"
 export PATH=$PATH:/usr/local/go/bin:/usr/local/go
 export EDITOR=vim
+export PATH=$PATH:~/bin
 
 # @z opti cd
-. /home/theo/etc/github/clones/z/z.sh
+if [ -f /home/theo/etc/github/clones/z/z.sh ];
+then
+    . /home/theo/etc/github/clones/z/z.sh
+fi
 
 # @history management
 shopt -s histappend
@@ -60,7 +64,7 @@ alias wt="wtfaliases" # @O.B
 alias tuc="top_used_commands" # @O.B
 alias t="tmux" # @O.B
 alias ssh="sshrc" # @O.B
-alias reload_baash="source ~/.bashrc" # @O.B
+alias reload_bash="source ~/.bashrc" # @O.B
 
 function wtfaliases() {
     echo "Your aliases that contains $1 are:"
@@ -79,6 +83,7 @@ alias DR="docker run" # @O.D
 alias DPS="docker ps -a" # @O.D
 alias de="docker exec" # @O.D
 alias di="docker exec -it" # @O.D
+alias da="docker ps -a" # @O.D
 alias remove_untagged_images="docker images | grep '<none>' | grep -P '[1234567890abcdef]{12}' -o | xargs -L1 docker rmi" # @O.D
 
 # @opti docker-compose
@@ -122,6 +127,7 @@ alias gS="git submodule" # @G.G
 alias gd="git diff" # @G.G
 alias gf="git fetch" # @G.G
 alias gb="git branch" # @G.G
+alias gco="git checkout " # @G.G
 
 function parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -159,6 +165,7 @@ alias travel_in_paris="python /THEO/parikstra/parikstra.py"
 alias TU="top_used_commands"
 alias ungron="gron --ungron"
 alias scratch="cd /tmp"
+alias slack="slack-term-linux-amd64 -config ~/bin/configs/slack_config.json"
 
 function replace_every_string() {
     egrep -lRZ "$1" . | xargs -0 -l sed -i -e "s/$1/$2/g"
@@ -263,4 +270,7 @@ function find_missing_file() {
 # TODO: Work on new_vm script
 
 ### Custom aliases (auto-completion)
-eval $(thefuck --alias)
+if [ type -p thfuck &> /dev/null ];
+then
+    eval $(thefuck --alias)
+fi
