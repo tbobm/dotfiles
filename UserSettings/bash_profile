@@ -49,6 +49,7 @@ alias SB="vim ~/.bashrc; source ~/.bashrc" # @O.C
 alias SV="vim ~/.vimrc" # @O.C
 alias ST="vim ~/.tmux.conf; tmux source-file ~/.tmux.conf" # @O.C
 alias todo="vim ~/todo.org" # @O.C
+alias notes="vim ~/notes.org" # @O.C
 
 # @opti basic
 alias v="vim" # @O.B
@@ -65,6 +66,8 @@ alias tuc="top_used_commands" # @O.B
 alias t="tmux" # @O.B
 alias ssh="sshrc" # @O.B
 alias reload_bash="source ~/.bashrc" # @O.B
+alias W="wc -l" # @O.B
+alias H="head -n " # @O.B
 
 function wtfaliases() {
     echo "Your aliases that contains $1 are:"

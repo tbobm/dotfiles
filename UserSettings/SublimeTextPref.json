@@ -1,0 +1,22 @@
+{
+    "translate_tabs_to_spaces": true, 
+    "save_on_focus_lost": true, 
+    "line_padding_top": 1, 
+    "margin": 10, 
+    "fade_fold_button": false, 
+    "font_face": "Source Code Pro", 
+    "overlay_scroll_bars": "enabled", 
+    "caret_extra_width": 2, 
+    "trim_trailing_white_spaces": false, 
+    "line_padding_bottom": 1, 
+    "open_files_in_new_window": false, 
+    "tab_size": 4, 
+    "caret_extra_bottom": 2, 
+    "color_scheme": "Packages/ayu/ayu-dark.tmTheme", 
+    "caret_extra_top": 2, 
+    "highlight_line": true, 
+    "caret_style": "phase", 
+    "ignored_packages": [
+        "Vintage"
+    ]
+}
