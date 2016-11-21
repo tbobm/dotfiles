@@ -30,7 +30,7 @@ alias cp='cp -i' # @M.F
 alias mv='mv -i' # @M.F
 
 # @prompt simple
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\][\T]: \u @ $(hostname) \[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\][\T]: \u @ $(hostname) \[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$\n[^_^]:>> '
 
 # @opti permissions
 alias chx="chmod 755" # @O.P
@@ -45,15 +45,15 @@ function opti_perm() {
 }
 
 # @opti conf
-alias SB="vim ~/.bashrc; source ~/.bashrc" # @O.C
-alias SV="vim ~/.vimrc" # @O.C
-alias ST="vim ~/.tmux.conf; tmux source-file ~/.tmux.conf" # @O.C
-alias todo="vim ~/todo.org" # @O.C
-alias notes="vim ~/notes.org" # @O.C
+alias SB="$EDITOR ~/.bashrc; source ~/.bashrc" # @O.C
+alias SV="$EDITOR ~/.$EDITORrc" # @O.C
+alias ST="$EDITOR ~/.tmux.conf; tmux source-file ~/.tmux.conf" # @O.C
+alias todo="$EDITOR ~/todo.org" # @O.C
+alias notes="$EDITOR ~/notes.org" # @O.C
 
 # @opti basic
-alias v="vim" # @O.B
-alias vi="vim" # @O.B
+alias v="$EDITOR" # @O.B
+alias vi="$EDITOR" # @O.B
 alias j="jobs" # @O.B
 alias c="cat" # @O.B
 alias g="git" # @O.B
@@ -150,7 +150,7 @@ function github_general() {
 alias save_bash="cp ~/.bashrc $GITHUB_CONFIG/UserSettings/bash_profile; cd $GITHUB_CONFIG;" # @G.U
 alias save_inputrc="cp ~/.inputrc $GITHUB_CONFIGU/serSettings/inputrc; cd $GITHUB_CONFIG;" # @G.U
 alias save_git_stars="starred --username massard-t --sort" # @G.U
-alias save_vim="cp ~/.vim.d/init.el $GITHUB_CONFIG/vim/init.el; cd $GITHUB_CONFIG;" # @G.U
+alias save_vim="cp ~/.$EDITOR.d/init.el $GITHUB_CONFIG/$EDITOR/init.el; cd $GITHUB_CONFIG;" # @G.U
 alias save_tmux="cp ~/.tmux.conf $GITHUB_CONFIG/UserSettings/tmux.conf; cd $GITHUB_CONFIG;" # @G.U
 
 function github_user() {
