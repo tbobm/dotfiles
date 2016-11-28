@@ -46,7 +46,7 @@ function opti_perm() {
 
 # @opti conf
 alias SB="$EDITOR ~/.bashrc; source ~/.bashrc" # @O.C
-alias SV="$EDITOR ~/.$EDITORrc" # @O.C
+alias SV="$EDITOR ~/.vimrc" # @O.C
 alias ST="$EDITOR ~/.tmux.conf; tmux source-file ~/.tmux.conf" # @O.C
 alias todo="$EDITOR ~/todo.org" # @O.C
 alias notes="$EDITOR ~/notes.org" # @O.C
@@ -68,6 +68,7 @@ alias ssh="sshrc" # @O.B
 alias reload_bash="source ~/.bashrc" # @O.B
 alias W="wc -l" # @O.B
 alias H="head -n " # @O.B
+alias T="tail -n " # @O.B
 
 function wtfaliases() {
     echo "Your aliases that contains $1 are:"
@@ -111,7 +112,7 @@ function lc() {
 
 # @output management
 alias less='less -FSRX' # @O.M
-alias G=" | grep" # @O.M
+alias G=" grep" # @O.M
 
 # @opti network
 alias ports="netstat -tulanp" # @O.N shows open ports

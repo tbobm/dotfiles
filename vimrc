@@ -88,6 +88,14 @@ call togglebg#map("<F5>")
 " NERDTree
 Plugin 'scrooloose/nerdtree'
 
+" NERDComment
+Plugin 'scrooloose/nerdcommenter'
+
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+
 " Plugin 'jistr/vim-nerdtree-tabs'
 
 " Ignore .pyc files
@@ -124,3 +132,6 @@ let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
 
 let g:go_fmt_fail_silently = 1
+
+" SQL
+Plugin 'alcesleo/vim-uppercase-sql'
