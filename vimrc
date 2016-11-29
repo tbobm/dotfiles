@@ -96,6 +96,8 @@ let g:NERDCompactSexyComs = 1
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
+map <leader><F4> :NERDTreeToggle <CR>
+
 " Plugin 'jistr/vim-nerdtree-tabs'
 
 " Ignore .pyc files
