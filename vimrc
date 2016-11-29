@@ -54,7 +54,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Syntax Highlighting
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 
 " Lint Highlighting
 Plugin 'nvie/vim-flake8'
@@ -135,3 +135,19 @@ let g:go_fmt_fail_silently = 1
 
 " SQL
 Plugin 'alcesleo/vim-uppercase-sql'
+
+" Bash
+Plugin 'vim-syntastic/syntastic'
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_sh_checkers = ["shellcheck"]
+
+" Search higlight
+hi Search cterm=NONE ctermfg=grey ctermbg=blue
