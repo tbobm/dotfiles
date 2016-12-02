@@ -20,6 +20,7 @@ filetype plugin indent on    " required
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
+
 " Enable folding with the spacebar
 nnoremap <space> za
 
@@ -29,10 +30,14 @@ let g:SimpylFold_docstring_preview=1
 
 " Maps
 let mapleader=","
-
+set pastetoggle=<F2>
+nnoremap ; :
+cmap w!! w !sudo tee % >/dev/null
 
 " Code
 set encoding=utf-8
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " Python
 " Linting (pep8)
