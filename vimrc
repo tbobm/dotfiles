@@ -27,6 +27,10 @@ Plugin 'tmhedberg/SimpylFold'
 " Allows to see Doctstring in folded code
 let g:SimpylFold_docstring_preview=1
 
+" Maps
+let mapleader=","
+
+
 " Code
 set encoding=utf-8
 
@@ -109,6 +113,9 @@ set nu
 " Git commands inside vim
 Plugin 'tpope/vim-fugitive'
 
+map <leader>c :Gcommit<CR>
+map <leader>p :Gpush<CR>
+
 " Powerline
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
@@ -134,6 +141,8 @@ let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
 
 let g:go_fmt_fail_silently = 1
+
+au BufNewFile,BufRead *.go map <leader>f :GoFmt<CR>
 
 " SQL
 Plugin 'alcesleo/vim-uppercase-sql'

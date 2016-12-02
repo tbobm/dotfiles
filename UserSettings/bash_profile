@@ -72,7 +72,7 @@ alias T="tail -n " # @O.B
 
 function wtfaliases() {
     echo "Your aliases that contains $1 are:"
-    pygmentize -g ~/.bashrc | grep -C 1 $1
+    pygmentize -g ~/.bashrc | grep -C 1 "$1"
 }
 
 # @opti system
@@ -103,10 +103,10 @@ alias l="ls --color" # @LS
 alias ll="ls -l" # @LS
 alias la="ls -a" # @LS
 alias lsh='ls -lhXG' # @LS long listing, human-readable, sort by extension, do not show group info
-alias "l-d"="ls -d */"
+alias l-d="ls -d */"
 
 function lc() {
-    cd $1
+    cd "$1"
     ls
 }
 
@@ -164,7 +164,7 @@ function github_user() {
 }
 
 # @miscellianous
-alias ".."="cd .."
+alias ..="cd .."
 alias travel_in_paris="python /THEO/parikstra/parikstra.py"
 alias TU="top_used_commands"
 alias ungron="gron --ungron"
@@ -265,7 +265,7 @@ function bashtips {
 }
 
 function find_missing_file() {
-    find $1 -mindepth 2 -maxdepth 2 -type d '!' -exec test -e "{}/$2" ';' -print
+    find "$1" -mindepth 2 -maxdepth 2 -type d '!' -exec test -e "{}/$2" ';' -print
 }
 
 # TODO: Move every function inside other file and source it
@@ -274,7 +274,13 @@ function find_missing_file() {
 # TODO: Work on new_vm script
 
 ### Custom aliases (auto-completion)
-if [ type -p thfuck &> /dev/null ];
+thefuck --alias &> /dev/null 
+if [ $? == 0 ];
 then
-    eval $(thefuck --alias)
+    eval $(thefuck --alias) 
 fi
+
+
+
+
+
