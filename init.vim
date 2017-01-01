@@ -12,7 +12,7 @@ Plug 'freeo/vim-kalisi'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 
 Plug 'nvie/vim-flake8'
 
@@ -20,7 +20,7 @@ call plug#end()
 
 " Colorscheme
 colorscheme kalisi
-set background=light
+set background=dark
 
 let g:airline_theme='molokai'
 
@@ -60,9 +60,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-"YouCompleteMe
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " filetype
 filetype plugin indent on
