@@ -53,6 +53,7 @@ alias SV='$EDITOR $EDITOR_CONFIG' # @O.C
 alias ST='$EDITOR $CONFIG_TMUX; tmux source-file $CONFIG_TMUX' # @O.C
 alias todo='$EDITOR ~/todo.org' # @O.C
 alias notes='$EDITOR ~/notes.org' # @O.C
+alias cgit='cd $GITHUB_CONFIG'
 
 # @opti basic
 alias v='$EDITOR' # @O.B

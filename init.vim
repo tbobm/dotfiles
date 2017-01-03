@@ -32,6 +32,13 @@ set noshowmode
 set foldmethod=indent
 set foldlevel=99
 
+" netrw
+let g:netrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_liststyle=3
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+
 " # Maps
 " Allow spacebar to fold
 nnoremap <space> za
@@ -43,6 +50,8 @@ nnoremap ; :
 " NERDTree toggle
 map <leader><F4> :NERDTreeToggle <CR>
 
+" line numbering toggle
+nmap <F3> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
 " vim-fugitive
 map <leader>c :Gcommit <CR>
 map <leader>p :Gpush <CR>
