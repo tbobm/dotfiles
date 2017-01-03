@@ -16,11 +16,12 @@ export PATH=$PATH:~/bin
 export EDITOR_CONFIG=~/.config/nvim/init.vim
 export CONFIG_TMUX=~/.tmux.conf
 export CONFIG_SHELL=~/.bashrc
+export Z_HOME=~/etc/z/z.sh
 
 # @z opti cd
-if [ -f /home/theo/etc/github/clones/z/z.sh ];
+if [ -f $Z_HOME ];
 then
-	source /home/theo/etc/github/clones/z/z.sh
+	source $Z_HOME
 fi
 
 # @history management
