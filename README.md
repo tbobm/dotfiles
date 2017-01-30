@@ -3,6 +3,7 @@
 My dotfiles and configurations.
 
 ## Todo
-> Create a shell script to make a one-command-install <br>
-> Create basic architecture<br>
-> Collect up-to-date informations about my config<br>
+
+[x] Create a shell script to make a one-command-install <br>
+[x] Create basic architecture<br>
+[x] Collect up-to-date informations about my config<br>
