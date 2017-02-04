@@ -16,6 +16,10 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'nvie/vim-flake8'
 
+Plug 'tpope/vim-surround'
+
+Plug 'rhysd/vim-clang-format'
+
 call plug#end()
 
 " Colorscheme
@@ -29,7 +33,7 @@ set nu
 set noshowmode
 
 " Folding
-set foldmethod=indent
+set foldmethod=syntax
 set foldlevel=99
 
 " netrw
@@ -50,12 +54,28 @@ nnoremap ; :
 " NERDTree toggle
 map <leader><F4> :NERDTreeToggle <CR>
 
+" Clang-Format
+map <leader>c :ClangFormat <CR>
+
+" Add parenthesis
+map <leader>9 ysiw)
 " line numbering toggle
 nmap <F3> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
 " vim-fugitive
-map <leader>c :Gcommit <CR>
 map <leader>p :Gpush <CR>
 
+" Windows mapping
+" map <C-L> <C-W>l<C-W>
+" map <C-H> <C-W>h<C-W>
+
+" Tabs
+" Tab navigation like Firefox.
+nnoremap th  :tabfirst<CR>
+nnoremap tj  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+
+nnoremap <C-N> :tabnew<CR>
 " # Code
 set encoding=utf-8
 set list
