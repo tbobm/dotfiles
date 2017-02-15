@@ -18,10 +18,12 @@ export CONFIG_TMUX=~/.tmux.conf
 export CONFIG_SHELL=~/.bashrc
 export Z_HOME=~/etc/z/z.sh
 export CLANG_FORMAT_CONFIG=~/.clang-format
+export PREP02=/home/theo/usr/w/etna/prep02
 
 # @z opti cd
 if [ -f $Z_HOME ];
 then
+	# shellcheck source=/dev/null
 	source $Z_HOME
 fi
 
@@ -77,6 +79,7 @@ alias W="wc -l" # @O.B
 alias H="head -n " # @O.B
 alias T="tail -n " # @O.B
 alias p="pygmentize"
+alias make="make -j4 "
 
 function wtfaliases {
     echo "Your aliases that contains $1 are:"
@@ -140,6 +143,8 @@ alias gd="git diff" # @G.G
 alias gf="git fetch" # @G.G
 alias gb="git branch" # @G.G
 alias gco="git checkout " # @G.G
+alias gq="git-quick-stats "
+alias gF="git-clang-format-3.8"
 
 # @svn general
 alias sst="svn st"
@@ -212,7 +217,7 @@ function myinfo {
     printf "RAM: "
     free -m
     printf "CPU: "
-    cat /proc/cpuinfo | grep "model name" | head -1 | awk '{ for (i = 4; i <= NF; i++) printf "%s ", $i }'
+    grep "model name" < /proc/cpuinfo | head -1 | awk '{ for (i = 4; i <= NF; i++) printf "%s ", $i }'
     printf "\n"
     #cat /etc/issue | awk '{ printf "OS: %s %s %s %s | " , $1 , $2 , $3 , $4 }'
     #uname -a | awk '{ printf "Kernel: %s " , $3 }'
@@ -222,6 +227,10 @@ function myinfo {
     #printf "\n"   cputemp | head -1 | awk '{ printf "%s %s %s\n", $1, $2, $3 }'
     #printf "\n"
     # cputemp | tail -1 | awk '{ printf "%s %s %s\n", $1, $2, $3 }'   #cputemp | awk '{ printf "%s %s", $1 $2 }' }'""''""''""''""''""''""''""''""}'
+}
+
+function etna_time {
+	curl -v --silent https://prepintra.etna-alternance.net 2>&1 | grep Date | sed -e 's/< Date: //'
 }
 
 function bashtips {
@@ -281,12 +290,32 @@ function find_missing_file {
     find "$1" -mindepth 2 -maxdepth 2 -type d '!' -exec test -e "{}/$2" ';' -print
 }
 
+# ETNA
 function add_makefile_cpp {
 	MAKEFILE_LOC="/home/theo/usr/w/etna/prep02/FDI-COBJ/useful/Makefile"
 	echo "Adding Makefile from :  $MAKEFILE_LOC"
 	cp $MAKEFILE_LOC .
 	printf "Done. \n"
 	$EDITOR ./Makefile
+}
+
+
+function transfer {
+	if [ $# -eq 0 ];
+	then
+		printf "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md";
+		return 1;
+	fi
+	tmpfile=$( mktemp -t transferXXX );
+	if tty -s;
+	then
+		basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g');
+		curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> "$tmpfile";
+	else
+		curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> "$tmpfile" ;
+	fi;
+	cat "$tmpfile";
+	rm -f "$tmpfile";
 }
 
 ### Custom aliases (auto-completion)

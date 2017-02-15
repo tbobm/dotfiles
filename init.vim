@@ -20,6 +20,11 @@ Plug 'tpope/vim-surround'
 
 Plug 'rhysd/vim-clang-format'
 
+" Code Snippets
+Plug 'SirVer/ultisnips'
+
+Plug 'honza/vim-snippets'
+
 call plug#end()
 
 " Colorscheme
@@ -45,7 +50,7 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 " # Maps
 " Allow spacebar to fold
-nnoremap <space> za
+nnoremap<space> za
 
 let mapleader=","
 set pastetoggle=<F2>
@@ -59,6 +64,7 @@ map <leader>c :ClangFormat <CR>
 
 " Add parenthesis
 map <leader>9 ysiw)
+
 " line numbering toggle
 nmap <F3> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
 " vim-fugitive
@@ -76,6 +82,10 @@ nnoremap tk  :tabprev<CR>
 nnoremap tl  :tablast<CR>
 
 nnoremap <C-N> :tabnew<CR>
+
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprev<CR>
+
 " # Code
 set encoding=utf-8
 set list
@@ -93,6 +103,11 @@ let g:syntastic_check_on_wq = 0
 " filetype
 filetype plugin indent on
 
+" Snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<leader>b"
+let g:UltiSnipsJumpBackwardTrigger="<leader>z"
+
 " Python
 au BufNewFile,BufRead *.py set
     \ tabstop=4
@@ -102,5 +117,3 @@ au BufNewFile,BufRead *.py set
     \ expandtab
     \ autoindent
     \ fileformat=unix
-
-
