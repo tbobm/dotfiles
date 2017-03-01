@@ -59,8 +59,10 @@ nnoremap ; :
 " NERDTree toggle
 map <leader><F4> :NERDTreeToggle <CR>
 
-" Clang-Format
-map <leader>c :ClangFormat <CR>
+" Format
+au BufRead,BufNewFile *.c,*.cpp,*.h,*.hpp,*.hh map <leader>c :ClangFormat <CR>
+au BufRead,BufNewFile *.go map <leader>c :GoFmt <CR>
+au BufRead,BufNewFile *.go map <leader>v :GoVet <CR>
 
 " Add parenthesis
 map <leader>9 ysiw)

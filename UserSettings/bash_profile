@@ -2,6 +2,7 @@
 
 # @env variables
 export GITHUB_CONFIG=/home/theo/etc/MyConfiguration
+export GITHUB_CONFIGURATION_FILE=/home/theo/.gitconfig
 export HISTFILESIZE=20000
 export HISTSIZE=10000
 export HISTIGNORE="&:ls:[bf]g:exit:l:h:cd"
@@ -19,12 +20,21 @@ export CONFIG_SHELL=~/.bashrc
 export Z_HOME=~/etc/z/z.sh
 export CLANG_FORMAT_CONFIG=~/.clang-format
 export PREP02=/home/theo/usr/w/etna/prep02
+#export PROMPT_COMMAND=drink_water
+export THIRSTY_HOME=~/bin/thirsty/thirsty.sh
 
 # @z opti cd
 if [ -f $Z_HOME ];
 then
 	# shellcheck source=/dev/null
 	source $Z_HOME
+fi
+
+# When should I drink
+if [ -f $THIRSTY_HOME ];
+then
+	# shellcheck source=/dev/null
+	source $THIRSTY_HOME
 fi
 
 # @history management
@@ -37,7 +47,7 @@ alias cp='cp -i' # @M.F
 alias mv='mv -i' # @M.F
 
 # @prompt simple
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\][\T]: \u @ $(hostname) \[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n[^_^]:>> '
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\][\T]: \u @ $(hostname) \[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] $(drink_water)\n[^_^]:>> '
 
 # @opti permissions
 alias chx="chmod 755" # @O.P
@@ -56,6 +66,7 @@ alias SB='$EDITOR $CONFIG_SHELL; source $CONFIG_SHELL' # @O.C
 alias SV='$EDITOR $EDITOR_CONFIG' # @O.C
 alias SC='$EDITOR $CLANG_FORMAT_CONFIG'
 alias ST='$EDITOR $CONFIG_TMUX; tmux source-file $CONFIG_TMUX' # @O.C
+alias SG='sudo $EDITOR $GITHUB_CONFIGURATION_FILE' # @ O.C
 alias todo='$EDITOR ~/todo.org' # @O.C
 alias notes='$EDITOR ~/notes.org' # @O.C
 alias cgit='cd $GITHUB_CONFIG'

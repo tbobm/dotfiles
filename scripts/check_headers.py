@@ -21,7 +21,6 @@ def crawl_in_files(dir_to_crawl, func_to_exec=None):
         if file.endswith(".c"):
             res.append(has_header(dir_to_crawl + '/' + file))
         if os.path.isdir(file):
-            pass
             res = func_to_exec(file)
     return (res)
 
