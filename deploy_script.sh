@@ -30,6 +30,9 @@ function clone_configuration {
 
 	ln -s ~/etc/MyConfiguration/UserSettings/bash_profile ~/.bashrc
 
+	wget https://raw.githubusercontent.com/Russell91/sshrc/master/sshrc ~/bin/sshrc
+	chmod +x ~/bin/sshrc
+	ln -s ~/etc/MyConfiguration/UserSettings/bash_profile ~/.sshrc
 	cd ~ || exit 1
 }
 
@@ -73,5 +76,5 @@ function install_neovim {
 }
 
 function _deploy {
-
+		test
 }
