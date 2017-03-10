@@ -22,6 +22,10 @@ export CLANG_FORMAT_CONFIG=~/.clang-format
 export PREP02=/home/theo/usr/w/etna/prep02
 #export PROMPT_COMMAND=drink_water
 export THIRSTY_HOME=~/bin/thirsty/thirsty.sh
+export MY_HOME="48.928378,2.162200"
+export WORK="48.813896,2.392448"
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+export JRE_HOME=/usr/lib/jvm/java-8-oracle/jre
 
 # @z opti cd
 if [ -f $Z_HOME ];
@@ -324,7 +328,17 @@ function add_makefile_cpp {
 	$EDITOR ./Makefile
 }
 
+function J {
+	fname="$1"
+	executable_name=${fname%.java}
+	docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp java:8 javac "$1"
+	if [ $? == 0 ];
+	then
+		docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp java:8 java "$executable_name"
+	fi
+}
 
+alias mvn="docker run -it --rm --name my-maven-project -v $PWD:/usr/src/mymaven -w /usr/src/mymaven maven:3.3.9-jdk-8 mvn "
 function transfer {
 	if [ $# -eq 0 ];
 	then

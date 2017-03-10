@@ -13,6 +13,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Plug 'Valloric/YouCompleteMe'
+" Autocomplete
+Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+
+Plug 'roxma/nvim-completion-manager'
 
 Plug 'nvie/vim-flake8'
 
@@ -24,6 +28,10 @@ Plug 'rhysd/vim-clang-format'
 Plug 'SirVer/ultisnips'
 
 Plug 'honza/vim-snippets'
+
+" ETNA
+
+Plug 'ervandew/eclim'
 
 call plug#end()
 
@@ -107,8 +115,8 @@ filetype plugin indent on
 
 " Snippets
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<leader>b"
-let g:UltiSnipsJumpBackwardTrigger="<leader>z"
+"let g:UltiSnipsJumpForwardTrigger="<leader>b"
+"let g:UltiSnipsJumpBackwardTrigger="<leader>z"
 
 " Python
 au BufNewFile,BufRead *.py set
