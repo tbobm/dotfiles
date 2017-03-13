@@ -133,4 +133,6 @@ au BufNewFile,BufRead *.py set
 function! PrettyJSON()
 	%!python -m json.tool
 endfunction
+
 command! PrettyJSON call PrettyJSON()
+
