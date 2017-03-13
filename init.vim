@@ -127,3 +127,10 @@ au BufNewFile,BufRead *.py set
     \ expandtab
     \ autoindent
     \ fileformat=unix
+
+" User defined functions
+
+function! PrettyJSON()
+	%!python -m json.tool
+endfunction
+command! PrettyJSON call PrettyJSON()
