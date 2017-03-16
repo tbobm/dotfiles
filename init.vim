@@ -29,6 +29,9 @@ Plug 'SirVer/ultisnips'
 
 Plug 'honza/vim-snippets'
 
+" Unit testing
+
+" Plug 'alfredodeza/pytest.vim'
 " ETNA
 
 Plug 'ervandew/eclim'
