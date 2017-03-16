@@ -136,8 +136,10 @@ alias sa="svn add "
 alias sr="svn revert"
 alias sci="svn ci -m "
 
+# Functions
+
 function wtfaliases {
-    echo "Your aliases that contains $1 are:"
+    echo "Your aliases containing $1 are:"
     pygmentize -g $CONFIG_SHELL | grep -C 1 "$1"
 }
 
@@ -285,6 +287,17 @@ function bashtips {
 
 function find_missing_file {
     find "$1" -mindepth 2 -maxdepth 2 -type d '!' -exec test -e "{}/$2" ';' -print
+}
+
+# Code
+## Python
+function pytest {
+	if [ -f tests.py ];
+	then
+		py.test "$@" tests.py
+	else
+		py.test "$@"
+	fi
 }
 
 # ETNA
