@@ -6,14 +6,10 @@ export GITHUB_CONFIGURATION_FILE=/home/theo/.gitconfig
 export HISTFILESIZE=20000
 export HISTSIZE=10000
 export HISTIGNORE="&:ls:[bf]g:exit:l:h:cd"
-export GOPATH=/home/theo/usr/w/work
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOBIN
 export CHEATCOLORS=true
 export WINDOWS="10.0.2.2"
-export PATH=$PATH:/usr/local/go/bin:/usr/local/go
 export EDITOR=nvim
-export PATH=$PATH:~/bin
+export GOPATH=/home/theo/usr/w/work
 export EDITOR_CONFIG=~/.config/nvim/init.vim
 export CONFIG_TMUX=~/.tmux.conf
 export CONFIG_SHELL=~/.bashrc
@@ -25,6 +21,9 @@ export MY_HOME="48.928378,2.162200"
 export WORK="48.813896,2.392448"
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 export JRE_HOME=/usr/lib/jvm/java-8-oracle/jre
+export GOBIN=$GOPATH/bin
+export CABAL_BIN=~/.cabal/bin
+export PATH=$PATH:/usr/local/go/bin:/usr/local/go:~/bin:$GOBIN:$CABAL_BIN
 
 # @z opti cd
 if [ -f $Z_HOME ];
@@ -107,13 +106,14 @@ alias de="docker exec" # @O.D
 alias di="docker exec -it" # @O.D
 alias da="docker ps -a" # @O.D
 alias remove_untagged_images="docker images | grep '<none>' | grep -P '[1234567890abcdef]{12}' -o | xargs -L1 docker rmi" # @O.D
-# Docker-compose
+## Docker-compose
 alias DC="docker-compose" # @O.C
 alias DCB="docker-compose build" # @O.C
 alias DCU="docker-compose up -d" # @O.C
 alias DRB="docker-compose up -d --build; ./init_containers.sh --deploy" # @O.C
 alias REB="DCB && DCU && ./init_containers.sh --deploy" # @O.C
-# Github
+# Versionning
+## Github
 alias ga="git add" # @G.G
 alias gp="git push" # @G.G
 alias gc="git commit -m" # @G.G
@@ -130,11 +130,19 @@ alias gb="git branch" # @G.G
 alias gco="git checkout " # @G.G
 alias gq="git-quick-stats "
 alias gF="git-clang-format-3.8"
-# Svn
+## Svn
 alias sst="svn st"
 alias sa="svn add "
 alias sr="svn revert"
 alias sci="svn ci -m "
+# Installs
+## Pip
+alias pI="sudo -H pip install "
+alias pI3="sudo -H pip3 install "
+# Exercism.io
+alias E="exercism "
+alias EF="exercism fetch "
+alias EC="exercism submit "
 
 # Functions
 
@@ -294,7 +302,7 @@ function find_missing_file {
 function pytest {
 	if [ -f tests.py ];
 	then
-		py.test "$@" tests.py
+		py.test --cov climapper "$@" tests.py
 	else
 		py.test "$@"
 	fi

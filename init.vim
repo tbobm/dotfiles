@@ -1,4 +1,5 @@
 " Using vim-plug
+set runtimepath+=~/etc/snippets
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/nerdtree'
@@ -29,7 +30,8 @@ Plug 'SirVer/ultisnips'
 
 Plug 'honza/vim-snippets'
 
-" Unit testing
+" Language
+Plug 'neovimhaskell/haskell-vim'
 
 " Plug 'alfredodeza/pytest.vim'
 " ETNA
@@ -37,6 +39,17 @@ Plug 'honza/vim-snippets'
 Plug 'ervandew/eclim'
 
 call plug#end()
+" end vim-plug
+
+" Customisation based on https://github.com/mcantor/no_plugins/blob/master/no_plugins.vim
+
+let g:UltiSnipsSnippetsDir=$HOME."/etc/snippets/UltiSnip"
+"let g:UltiSnipsSnippetDirectories=["~/etc/snippets", "UltiSnips"]
+set wildmenu
+
+" Generate ctags
+command! MakeTags !ctags -R .
+
 
 " Colorscheme
 colorscheme kalisi
@@ -121,15 +134,27 @@ let g:UltiSnipsExpandTrigger="<tab>"
 "let g:UltiSnipsJumpForwardTrigger="<leader>b"
 "let g:UltiSnipsJumpBackwardTrigger="<leader>z"
 
+set expandtab
+set fileformat=unix
+
 " Python
 au BufNewFile,BufRead *.py set
     \ tabstop=4
     \ softtabstop=4
     \ shiftwidth=4
     \ textwidth=79
-    \ expandtab
     \ autoindent
     \ fileformat=unix
+
+" Haskell
+au BufNewFile,BufRead *.hs set
+    \ softtabstop=2
+    \ shiftwidth=2
+    \ smartindent
+    \ smarttab
+    \ fileformat=unix
+
+au BufEnter *.hs compiler ghc
 
 " User defined functions
 
