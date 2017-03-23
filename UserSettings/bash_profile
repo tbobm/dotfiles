@@ -12,7 +12,7 @@ export EDITOR=nvim
 export GOPATH=/home/theo/usr/w/work
 export EDITOR_CONFIG=~/.config/nvim/init.vim
 export CONFIG_TMUX=~/.tmux.conf
-export CONFIG_SHELL=~/.bashrc
+export CONFIG_SHELL_BOB=~/.bashrc
 export Z_HOME=~/etc/z/z.sh
 export CLANG_FORMAT_CONFIG=~/.clang-format
 export PREP02=/home/theo/usr/w/etna/prep02
@@ -60,13 +60,13 @@ alias la="ls -a" # @LS
 alias lsh='ls -lhXG' # @LS
 alias l-d="ls -d */"
 # Configuration management
-alias SB='$EDITOR $CONFIG_SHELL; source $CONFIG_SHELL' # @O.C
+alias SB='$EDITOR $CONFIG_SHELL_BOB; source $CONFIG_SHELL_BOB' # @O.C
 alias SV='$EDITOR $EDITOR_CONFIG' # @O.C
 alias SC='$EDITOR $CLANG_FORMAT_CONFIG'
 alias ST='$EDITOR $CONFIG_TMUX; tmux source-file $CONFIG_TMUX' # @O.C
 alias SG='sudo $EDITOR $GITHUB_CONFIGURATION_FILE' # @ O.C
 # Reload configuration
-alias reload_bash='source $CONFIG_SHELL' # @O.B
+alias reload_bash='source $CONFIG_SHELL_BOB' # @O.B
 # Track things
 alias todo='$EDITOR ~/todo.org' # @O.C
 alias notes='$EDITOR ~/notes.org' # @O.C
@@ -143,12 +143,19 @@ alias pI3="sudo -H pip3 install "
 alias E="exercism "
 alias EF="exercism fetch "
 alias EC="exercism submit "
+# Languages
+## Haskell
+alias ghc='stack exec -- ghc'
+alias ghci='stack exec -- ghci'
+# Utils
+alias nmap="docker run -it --rm networkstatic/nmap "
+
 
 # Functions
 
 function wtfaliases {
     echo "Your aliases containing $1 are:"
-    pygmentize -g $CONFIG_SHELL | grep -C 1 "$1"
+    pygmentize -g $CONFIG_SHELL_BOB | grep -C 1 "$1"
 }
 
 

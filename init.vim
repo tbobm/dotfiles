@@ -3,6 +3,7 @@ set runtimepath+=~/etc/snippets
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/nerdtree'
+
 Plug 'tpope/vim-fugitive'
 Plug 'fatih/vim-go'
 
@@ -31,20 +32,22 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Language
+" Haskell
 Plug 'neovimhaskell/haskell-vim'
 
-" Plug 'alfredodeza/pytest.vim'
-" ETNA
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
-Plug 'ervandew/eclim'
+Plug 'eagletmt/ghcmod-vim'
+
+" Plug 'alfredodeza/pytest.vim'
+" TODO Add cmake support @cpp/c
 
 call plug#end()
-" end vim-plug
 
 " Customisation based on https://github.com/mcantor/no_plugins/blob/master/no_plugins.vim
 
 let g:UltiSnipsSnippetsDir=$HOME."/etc/snippets/UltiSnip"
-"let g:UltiSnipsSnippetDirectories=["~/etc/snippets", "UltiSnips"]
+" let g:UltiSnipsSnippetDirectories=["~/etc/snippets", "UltiSnips"]
 set wildmenu
 
 " Generate ctags
@@ -154,7 +157,7 @@ au BufNewFile,BufRead *.hs set
     \ smarttab
     \ fileformat=unix
 
-au BufEnter *.hs compiler ghc
+" au Bufenter *.hs compiler ghc
 
 " User defined functions
 
