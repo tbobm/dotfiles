@@ -13,14 +13,15 @@ export GOPATH=/home/theo/usr/w/work
 export EDITOR_CONFIG=~/.config/nvim/init.vim
 export CONFIG_TMUX=~/.tmux.conf
 export CONFIG_SHELL_BOB=~/.bashrc
+export CONFIG_HYPER=~/.hyper.js
 export Z_HOME=~/etc/z/z.sh
 export CLANG_FORMAT_CONFIG=~/.clang-format
 export PREP02=/home/theo/usr/w/etna/prep02
 export THIRSTY_HOME=~/bin/thirsty/thirsty.sh
 export MY_HOME="48.928378,2.162200"
 export WORK="48.813896,2.392448"
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-export JRE_HOME=/usr/lib/jvm/java-8-oracle/jre
+#export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+#export JRE_HOME=/usr/lib/jvm/java-8-oracle/jre
 export GOBIN=$GOPATH/bin
 export CABAL_BIN=~/.cabal/bin
 export PATH=$PATH:/usr/local/go/bin:/usr/local/go:~/bin:$GOBIN:$CABAL_BIN
@@ -54,7 +55,7 @@ alias TU="top_used_commands"
 alias scratch="cd /tmp"
 # Pretty ls
 alias ls="ls --color" # @LS
-alias l="ls --color" # @LS
+alias l="ls " # @LS
 alias ll="ls -l" # @LS
 alias la="ls -a" # @LS
 alias lsh='ls -lhXG' # @LS
@@ -65,6 +66,7 @@ alias SV='$EDITOR $EDITOR_CONFIG' # @O.C
 alias SC='$EDITOR $CLANG_FORMAT_CONFIG'
 alias ST='$EDITOR $CONFIG_TMUX; tmux source-file $CONFIG_TMUX' # @O.C
 alias SG='sudo $EDITOR $GITHUB_CONFIGURATION_FILE' # @ O.C
+alias SH='$EDITOR $CONFIG_HYPER'
 # Reload configuration
 alias reload_bash='source $CONFIG_SHELL_BOB' # @O.B
 # Track things
@@ -75,7 +77,6 @@ alias v='$EDITOR' # @O.B
 alias vi='$EDITOR' # @O.B
 alias vim='$EDITOR' # @O.B
 alias j="jobs" # @O.B
-alias c="cat" # @O.B
 alias g="git" # @O.B
 alias sv="service" # @O.B
 alias cu="curl" # @O.B
@@ -145,8 +146,8 @@ alias EF="exercism fetch "
 alias EC="exercism submit "
 # Languages
 ## Haskell
-alias ghc='stack exec -- ghc'
-alias ghci='stack exec -- ghci'
+#alias ghc='stack exec -- ghc'
+#alias ghci='stack exec -- ghci'
 # Utils
 alias nmap="docker run -it --rm networkstatic/nmap "
 

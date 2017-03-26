@@ -58,7 +58,7 @@ command! MakeTags !ctags -R .
 colorscheme kalisi
 set background=dark
 
-let g:airline_theme='molokai'
+let g:airline_theme='base16_atelierlakeside'
 
 " Pretty
 set nu
