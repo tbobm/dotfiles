@@ -114,6 +114,9 @@ nnoremap <C-N> :tabnew<CR>
 
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprev<CR>
+nnoremap <leader>i :lprevious<CR>
+nnoremap <leader>p :lnext<CR>
+
 
 " # Code
 set encoding=utf-8
@@ -129,6 +132,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:syntastic_javascript_checkers = ['eslint']
+
 " filetype
 filetype plugin indent on
 
@@ -139,6 +144,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 
 set expandtab
 set fileformat=unix
+set autoindent
 
 " Python
 au BufNewFile,BufRead *.py set
@@ -146,8 +152,6 @@ au BufNewFile,BufRead *.py set
     \ softtabstop=4
     \ shiftwidth=4
     \ textwidth=79
-    \ autoindent
-    \ fileformat=unix
 
 " Haskell
 au BufNewFile,BufRead *.hs set
@@ -156,6 +160,14 @@ au BufNewFile,BufRead *.hs set
     \ smartindent
     \ smarttab
     \ fileformat=unix
+
+" HTML
+au BufNewFile,BufRead *.html set
+    \ tabstop=2
+    \ softtabstop=2
+    \ shiftwidth=2
+    \ smartindent
+    \ smarttab
 
 " au Bufenter *.hs compiler ghc
 
