@@ -159,6 +159,10 @@ function wtfaliases {
     pygmentize -g $CONFIG_SHELL_BOB | grep -C 1 "$1"
 }
 
+function gotosleep {
+        sudo shutdown "+$1"
+}
+
 
 # Stats
 function space_left {
@@ -368,3 +372,6 @@ fi
 
 # Prompt
 export PS1="\[\e[34m\]\u\[\e[m\]\[\e[37m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]:\[\e[34m\]\W\[\e[m\]\`parse_git_branch\` "
+
+eval "$(register-python-argcomplete coala)"
+source /etc/bash_completion.d/climate_completion
