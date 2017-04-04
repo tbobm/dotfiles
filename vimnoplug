@@ -1,0 +1,39 @@
+set nocompatible
+filetype off
+filetype plugin indent on
+
+set foldmethod=indent
+set foldlevel=99
+
+nnoremap <space> za
+
+let mapleader=","
+set pastetoggle=<F2>
+nnoremap ; :
+cmap w!! w !sudo tee % >/dev/null
+
+set encoding=utf-8
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+au BufNewFile,BufRead *.py set
+    \ tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ textwidth=79
+    \ expandtab
+    \ autoindent
+    \ fileformat=unix
+highlight BadWhitespace ctermbg=red guibg=red
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+let python_highlight_all=1
+syntax on
+au BufNewFile,BufRead *.js, *.html, *.css set
+    \ tabstop=2
+    \ softtabstop=2
+    \ shiftwidth=2
+set nu
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+hi Search cterm=NONE ctermfg=grey ctermbg=blue
