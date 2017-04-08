@@ -39,6 +39,9 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 Plug 'eagletmt/ghcmod-vim'
 
+" Rust
+Plug 'rust-lang/rust.vim'
+
 " Plug 'alfredodeza/pytest.vim'
 " TODO Add cmake support @cpp/c
 
@@ -133,6 +136,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
+map <leader>t :SyntasticToggleMode<CR>
 
 " filetype
 filetype plugin indent on

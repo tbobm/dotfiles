@@ -24,7 +24,8 @@ export WORK=
 #export JRE_HOME=/usr/lib/jvm/java-8-oracle/jre
 export GOBIN=$GOPATH/bin
 export CABAL_BIN=~/.cabal/bin
-export PATH=$PATH:/usr/local/go/bin:/usr/local/go:~/bin:$GOBIN:$CABAL_BIN
+export RUST_BIN=~/.cargo/bin
+export PATH=$PATH:/usr/local/go/bin:/usr/local/go:~/bin:$GOBIN:$CABAL_BIN:$RUST_BIN
 
 # @z opti cd
 if [ -f $Z_HOME ];
@@ -374,4 +375,5 @@ fi
 export PS1="\[\e[34m\]\u\[\e[m\]\[\e[37m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]:\[\e[34m\]\W\[\e[m\]\`parse_git_branch\` "
 
 eval "$(register-python-argcomplete coala)"
+# shellcheck source=/dev/null
 source /etc/bash_completion.d/climate_completion
