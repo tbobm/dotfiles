@@ -181,5 +181,10 @@ function! PrettyJSON()
 	%!python -m json.tool
 endfunction
 
+function! GlideUpdate()
+        !glide --no-color update
+endfunction
+
 command! PrettyJSON call PrettyJSON()
 
+command! GlideUpdate call GlideUpdate()

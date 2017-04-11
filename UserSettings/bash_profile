@@ -377,3 +377,6 @@ export PS1="\[\e[34m\]\u\[\e[m\]\[\e[37m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]:\[\e[34m
 eval "$(register-python-argcomplete coala)"
 # shellcheck source=/dev/null
 source /etc/bash_completion.d/climate_completion
+
+# shellcheck source=/dev/null
+#[[ -s "/home/theo/.gvm/scripts/gvm" ]] && source "/home/theo/.gvm/scripts/gvm"
