@@ -132,6 +132,7 @@ alias gb="git branch" # @G.G
 alias gco="git checkout " # @G.G
 alias gq="git-quick-stats "
 alias gF="git-clang-format-3.8"
+alias gmv="git mv"
 ## Svn
 alias sst="svn st"
 alias sa="svn add "
@@ -364,6 +365,10 @@ function transfer {
 	rm -f "$tmpfile";
 }
 
+function dockerlint {
+        docker run -it --rm --privileged -v "$(pwd)":/root/ projectatomic/dockerfile-lint dockerfile_lint
+}
+
 ### Custom aliases (auto-completion)
 thefuck --alias &> /dev/null
 if [ $? == 0 ];
@@ -378,5 +383,5 @@ eval "$(register-python-argcomplete coala)"
 # shellcheck source=/dev/null
 source /etc/bash_completion.d/climate_completion
 
-# shellcheck source=/dev/null
+# # shellcheck source=/dev/null
 #[[ -s "/home/theo/.gvm/scripts/gvm" ]] && source "/home/theo/.gvm/scripts/gvm"

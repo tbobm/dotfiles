@@ -45,6 +45,10 @@ Plug 'rust-lang/rust.vim'
 " Plug 'alfredodeza/pytest.vim'
 " TODO Add cmake support @cpp/c
 
+" Dockerfile
+" Plug 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+Plug 'ekalinin/Dockerfile.vim'
+
 call plug#end()
 
 " Customisation based on https://github.com/mcantor/no_plugins/blob/master/no_plugins.vim
@@ -91,8 +95,8 @@ map <leader><F4> :NERDTreeToggle <CR>
 
 " Format
 au BufRead,BufNewFile *.c,*.cpp,*.h,*.hpp,*.hh map <leader>c :ClangFormat <CR>
-au BufRead,BufNewFile *.go map <leader>c :GoFmt <CR>
-au BufRead,BufNewFile *.go map <leader>v :GoVet <CR>
+au BufRead,BufNewFile *.go map <leader>f :GoFull <CR>
+au BufRead,BufNewFile *.go map <leader>r :GoRun %<CR>
 
 " Add parenthesis
 map <leader>9 ysiw)
@@ -137,6 +141,7 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
 map <leader>t :SyntasticToggleMode<CR>
+map <leader>e :so $EDITOR_CONFIG<CR>
 
 " filetype
 filetype plugin indent on
@@ -185,6 +190,19 @@ function! GlideUpdate()
         !glide --no-color update
 endfunction
 
+function! SV()
+        :e $EDITOR_CONFIG
+endfunction
+
+function! GoFull()
+        :GoVet
+        :GoLint
+endfunction
+
 command! PrettyJSON call PrettyJSON()
 
 command! GlideUpdate call GlideUpdate()
+
+command! SV call SV()
+
+command! GoFull call GoFull()
