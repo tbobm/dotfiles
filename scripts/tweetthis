@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+curl -u "$TWITTER_USER:$TWITTER_PASSWORD" -d status="$*" http://twitter.com/statuses/update.xml

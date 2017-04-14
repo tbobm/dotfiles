@@ -369,6 +369,10 @@ function dockerlint {
         docker run -it --rm --privileged -v "$(pwd)":/root/ projectatomic/dockerfile-lint dockerfile_lint
 }
 
+function yaml2json {
+        python -c 'import sys, yaml, json; json.dump(yaml.load(sys.stdin), sys.stdout, indent=4)' < "$1" > "${2:-file.json}"
+}
+
 ### Custom aliases (auto-completion)
 thefuck --alias &> /dev/null
 if [ $? == 0 ];

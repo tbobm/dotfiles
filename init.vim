@@ -178,6 +178,10 @@ au BufNewFile,BufRead *.html set
     \ smartindent
     \ smarttab
 
+au BufNewFile,BufRead *.yml set
+    \ tabstop=2
+    \ softtabstop=2
+    \ shiftwidth=2
 " au Bufenter *.hs compiler ghc
 
 " User defined functions
