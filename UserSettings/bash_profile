@@ -373,6 +373,14 @@ function yaml2json {
         python -c 'import sys, yaml, json; json.dump(yaml.load(sys.stdin), sys.stdout, indent=4)' < "$1" > "${2:-file.json}"
 }
 
+function randomstring {
+        strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo
+}
+
+function is_done {
+        notify-send -u critical "$*"
+}
+
 ### Custom aliases (auto-completion)
 thefuck --alias &> /dev/null
 if [ $? == 0 ];
