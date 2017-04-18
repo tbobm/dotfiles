@@ -175,14 +175,14 @@ function space_left {
 
 # Github
 function gu {
-	git status | grep "modified" | awk '{ print $2 }' | xargs git add
+	# git status | grep "modified" | awk '{ print $2 }' | xargs git add
 	msg="$*"
 	commit_msg="[UPD] ${msg}"
 	git commit -m "$commit_msg"
 }
 
 function gA {
-	git status | grep "added" | awk '{ print $2 }' | xargs git add
+	# git status | grep "added" | awk '{ print $2 }' | xargs git add
 	msg="$*"
 	commit_msg="[ADD] ${msg}"
 	git commit -m "$commit_msg"
