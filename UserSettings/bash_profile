@@ -1,31 +1,30 @@
 # ~/.bashrc made by Theo Massard
 
 # @env variables
-export GITHUB_CONFIG=/home/theo/etc/MyConfiguration
-export GITHUB_CONFIGURATION_FILE=/home/theo/.gitconfig
+export GITHUB_CONFIG=/home/theom/etc/MyConfiguration
+export GITHUB_CONFIGURATION_FILE=/home/theom/.gitconfig
 export HISTFILESIZE=20000
 export HISTSIZE=10000
 export HISTIGNORE="&:ls:[bf]g:exit:l:h:cd"
 export CHEATCOLORS=true
 export WINDOWS="10.0.2.2"
 export EDITOR=nvim
-export GOPATH=/home/theo/usr/w/work
+export GOPATH=/home/theom/usr/w/go
 export EDITOR_CONFIG=~/.config/nvim/init.vim
 export CONFIG_TMUX=~/.tmux.conf
 export CONFIG_SHELL_BOB=~/.bashrc
 export CONFIG_HYPER=~/.hyper.js
 export Z_HOME=~/etc/z/z.sh
 export CLANG_FORMAT_CONFIG=~/.clang-format
-export PREP02=/home/theo/usr/w/etna/prep02
+export PREP02=/home/theom/usr/w/etna/prep02
 export THIRSTY_HOME=~/bin/thirsty/thirsty.sh
 export MY_HOME=
 export WORK=
-#export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-#export JRE_HOME=/usr/lib/jvm/java-8-oracle/jre
 export GOBIN=$GOPATH/bin
 export CABAL_BIN=~/.cabal/bin
 export RUST_BIN=~/.cargo/bin
 export PATH=$PATH:/usr/local/go/bin:/usr/local/go:~/bin:$GOBIN:$CABAL_BIN:$RUST_BIN
+export ASDF_HOME=~/etc/asdf
 
 # @z opti cd
 if [ -f $Z_HOME ];
@@ -325,7 +324,7 @@ function pytest {
 # ETNA
 ## CPP
 function add_makefile_cpp {
-	MAKEFILE_LOC="/home/theo/usr/w/etna/prep02/FDI-COBJ/useful/Makefile"
+	MAKEFILE_LOC="/home/theom/usr/w/etna/prep02/FDI-COBJ/useful/Makefile"
 	echo "Adding Makefile from :  $MAKEFILE_LOC"
 	cp $MAKEFILE_LOC .
 	printf "Done. \n"
@@ -392,8 +391,26 @@ fi
 export PS1="\[\e[34m\]\u\[\e[m\]\[\e[37m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]:\[\e[34m\]\W\[\e[m\]\`parse_git_branch\` "
 
 eval "$(register-python-argcomplete coala)"
+COMPLETE_CLIMATE=/etc/bash_completion.d/climate_completion
+if [ -f $COMPLETE_CLIMATE ];
+then
 # shellcheck source=/dev/null
-source /etc/bash_completion.d/climate_completion
+	source $COMPLETE_CLIMATE
+fi
+
+
+
+if [ -f $ASDF_HOME/asdf.sh ];
+then
+# shellcheck source=/dev/null
+	source $ASDF_HOME/asdf.sh
+fi
+
+if [ -f $ASDF_HOME/completion/asdf.bash ];
+then
+# shellcheck source=/dev/null
+	source $ASDF_HOME/completion/asdf.bash
+fi
 
 # # shellcheck source=/dev/null
-#[[ -s "/home/theo/.gvm/scripts/gvm" ]] && source "/home/theo/.gvm/scripts/gvm"
+#[[ -s "/home/theom/.gvm/scripts/gvm" ]] && source "/home/theom/.gvm/scripts/gvm"
