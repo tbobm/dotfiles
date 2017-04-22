@@ -15,7 +15,7 @@ function create_dirs_home {
 
 
 function clone_configuration {
-	cd etc/MyConfiguration/ || exit 1
+	#cd etc/MyConfiguration/ || exit 1
 
 	# Installing git
 	$INSTALL git git-core

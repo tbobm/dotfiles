@@ -14,6 +14,9 @@ Plug 'freeo/vim-kalisi'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Colorscheme
+Plug 'mhartington/oceanic-next'
+
 " Plug 'Valloric/YouCompleteMe'
 " Autocomplete
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
@@ -62,7 +65,11 @@ command! MakeTags !ctags -R .
 
 
 " Colorscheme
-colorscheme kalisi
+" colorscheme kalisi
+if (has("termguicolors"))
+    set termguicolors
+endif
+colorscheme OceanicNext
 set background=dark
 
 let g:airline_theme='base16_atelierlakeside'
