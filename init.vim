@@ -17,8 +17,10 @@ Plug 'vim-airline/vim-airline-themes'
 " Colorscheme
 Plug 'mhartington/oceanic-next'
 
-" Plug 'Valloric/YouCompleteMe'
 " Autocomplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 
 Plug 'roxma/nvim-completion-manager'
@@ -35,6 +37,9 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Language
+" Python
+Plug 'davidhalter/jedi-vim'
+
 " Haskell
 Plug 'neovimhaskell/haskell-vim'
 
@@ -53,6 +58,13 @@ Plug 'rust-lang/rust.vim'
 Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
+
+" Deoplete config
+let g:deoplete#enable_at_startup = 1
+" Deoplete Go
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+let g:deoplete#sources#go#use_cache = 1
 
 " Customisation based on https://github.com/mcantor/no_plugins/blob/master/no_plugins.vim
 
