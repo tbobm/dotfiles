@@ -10,7 +10,7 @@ export CHEATCOLORS=true
 export WINDOWS="10.0.2.2"
 export EDITOR=nvim
 export GOPATH=/home/theom/usr/w/go
-export GOROOT=/home/theom/etc/asdf/installs/go/$(go_version)/go
+export GOROOT=/home/theom/etc/asdf/installs/go/${go_version:-1.8.1}/go
 export EDITOR_CONFIG=~/.config/nvim/init.vim
 export CONFIG_TMUX=~/.tmux.conf
 export CONFIG_SHELL_BOB=~/.bashrc
@@ -66,7 +66,7 @@ alias SB='$EDITOR $CONFIG_SHELL_BOB; source $CONFIG_SHELL_BOB' # @O.C
 alias SV='$EDITOR $EDITOR_CONFIG' # @O.C
 alias SC='$EDITOR $CLANG_FORMAT_CONFIG'
 alias ST='$EDITOR $CONFIG_TMUX; tmux source-file $CONFIG_TMUX' # @O.C
-alias SG='sudo $EDITOR $GITHUB_CONFIGURATION_FILE' # @ O.C
+alias SG='$EDITOR $GITHUB_CONFIGURATION_FILE' # @ O.C
 alias SH='$EDITOR $CONFIG_HYPER'
 # Reload configuration
 alias reload_bash='source $CONFIG_SHELL_BOB' # @O.B
