@@ -10,7 +10,7 @@ export CHEATCOLORS=true
 export WINDOWS="10.0.2.2"
 export EDITOR=nvim
 export GOPATH=/home/theom/usr/w/go
-export GOROOT=/home/theom/etc/asdf/installs/go/${go_version:-1.8.1}/go
+export GOROOT=/home/theom/etc/go
 export EDITOR_CONFIG=~/.config/nvim/init.vim
 export CONFIG_TMUX=~/.tmux.conf
 export CONFIG_SHELL_BOB=~/.bashrc
@@ -19,8 +19,6 @@ export Z_HOME=~/etc/z/z.sh
 export CLANG_FORMAT_CONFIG=~/.clang-format
 export PREP02=/home/theom/usr/w/etna/prep02
 export THIRSTY_HOME=~/bin/thirsty/thirsty.sh
-export MY_HOME=
-export WORK=
 export GOBIN=$GOPATH/bin
 export CABAL_BIN=~/.cabal/bin
 export RUST_BIN=~/.cargo/bin
@@ -186,13 +184,6 @@ function gu {
 	git commit -m "$commit_msg"
 }
 
-function gA {
-	# git status | grep "added" | awk '{ print $2 }' | xargs git add
-	msg="$*"
-	commit_msg="[ADD] ${msg}"
-	git commit -m "$commit_msg"
-}
-
 # get current branch in git repo
 function parse_git_branch {
 	BRANCH=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
@@ -240,23 +231,8 @@ function parse_git_dirty {
 	fi
 }
 
-
-function replace_every_string {
-    egrep -lRZ "$1" . | xargs -0 -l sed -i -e "s/$1/$2/g"
-}
-
 function top_used_commands {
     history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n15
-}
-
-
-function get_uptime { # pretty prints uptime
-    uptime | awk '{ print "Uptime:", $3, $4, $5 }' | sed 's/,//g'
-    return;
-}
-
-function f_string_in_files {
-    find . -type f -iname "$2" -exec grep -l "$1" {} +
 }
 
 function bashtips {
@@ -312,10 +288,6 @@ function bashtips {
     }
 }
 
-function find_missing_file {
-    find "$1" -mindepth 2 -maxdepth 2 -type d '!' -exec test -e "{}/$2" ';' -print
-}
-
 # Code
 ## Python
 function pytest {
@@ -335,17 +307,6 @@ function add_makefile_cpp {
 	cp $MAKEFILE_LOC .
 	printf "Done. \n"
 	$EDITOR ./Makefile
-}
-
-## Java
-function J {
-	fname="$1"
-	executable_name=${fname%.java}
-	docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp java:8 javac "$1"
-	if [ $? == 0 ];
-	then
-		docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp java:8 java "$executable_name"
-	fi
 }
 
 function etna_time {
@@ -396,6 +357,8 @@ fi
 # Prompt
 export PS1="\[\e[34m\]\u\[\e[m\]\[\e[37m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]:\[\e[34m\]\W\[\e[m\]\`parse_git_branch\` "
 
+
+# Completion
 eval "$(register-python-argcomplete coala)"
 COMPLETE_CLIMATE=/etc/bash_completion.d/climate_completion
 if [ -f $COMPLETE_CLIMATE ];
@@ -417,6 +380,3 @@ then
 # shellcheck source=/dev/null
 	source $ASDF_HOME/completion/asdf.bash
 fi
-
-# # shellcheck source=/dev/null
-#[[ -s "/home/theom/.gvm/scripts/gvm" ]] && source "/home/theom/.gvm/scripts/gvm"

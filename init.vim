@@ -94,6 +94,10 @@ set noshowmode
 set foldmethod=syntax
 set foldlevel=99
 
+" History
+set undofile
+set undodir=~/etc/undodir
+
 " netrw
 let g:netrw_browse_split=4
 let g:netrw_altv=1
