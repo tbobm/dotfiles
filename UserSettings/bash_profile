@@ -180,7 +180,7 @@ function space_left {
 function gu {
 	# git status | grep "modified" | awk '{ print $2 }' | xargs git add
 	msg="$*"
-	commit_msg="[UPD] ${msg}"
+	commit_msg="${msg}"
 	git commit -m "$commit_msg"
 }
 
