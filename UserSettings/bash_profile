@@ -32,13 +32,6 @@ then
 	source $Z_HOME
 fi
 
-# When should I drink
-if [ -f $THIRSTY_HOME ];
-then
-	# shellcheck source=/dev/null
-	source $THIRSTY_HOME
-fi
-
 # @history
 shopt -s histappend
 shopt -s cmdhist
