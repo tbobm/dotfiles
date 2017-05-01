@@ -144,7 +144,6 @@ alias EC="exercism submit "
 # Utils
 alias nmap="docker run -it --rm networkstatic/nmap "
 
-
 # Functions
 
 function wtfaliases {
@@ -171,7 +170,6 @@ function space_left {
 
 # Github
 function gu {
-	# git status | grep "modified" | awk '{ print $2 }' | xargs git add
 	msg="$*"
 	commit_msg="${msg}"
 	git commit -m "$commit_msg"
@@ -350,7 +348,6 @@ fi
 # Prompt
 export PS1="\[\e[34m\]\u\[\e[m\]\[\e[37m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]:\[\e[34m\]\W\[\e[m\]\`parse_git_branch\` "
 
-
 # Completion
 eval "$(register-python-argcomplete coala)"
 COMPLETE_CLIMATE=/etc/bash_completion.d/climate_completion
@@ -359,8 +356,6 @@ then
 # shellcheck source=/dev/null
 	source $COMPLETE_CLIMATE
 fi
-
-
 
 if [ -f $ASDF_HOME/asdf.sh ];
 then
