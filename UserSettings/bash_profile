@@ -36,6 +36,10 @@ fi
 shopt -s histappend
 shopt -s cmdhist
 
+# Vi mode
+set -o vi
+bind 'set show-mode-in-prompt on'
+
 # Frequent commands
 alias ..="cd .."
 alias rm='rm -i' # @M.F
@@ -141,6 +145,8 @@ alias EC="exercism submit "
 ## Haskell
 #alias ghc='stack exec -- ghc'
 #alias ghci='stack exec -- ghci'
+## Python
+alias py="python3.5"
 # Utils
 alias nmap="docker run -it --rm networkstatic/nmap "
 
@@ -367,4 +373,10 @@ if [ -f $ASDF_HOME/completion/asdf.bash ];
 then
 # shellcheck source=/dev/null
 	source $ASDF_HOME/completion/asdf.bash
+fi
+
+if [ -f ~/etc/completions/git.sh ];
+then
+# shellcheck source=/dev/null
+        source ~/etc/completions/git.sh
 fi

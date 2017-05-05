@@ -50,6 +50,9 @@ Plug 'eagletmt/ghcmod-vim'
 " Rust
 Plug 'rust-lang/rust.vim'
 
+" Vim
+Plug 'dbakker/vim-lint'
+
 " Plug 'alfredodeza/pytest.vim'
 " TODO Add cmake support @cpp/c
 
@@ -78,9 +81,9 @@ command! MakeTags !ctags -R .
 
 " Colorscheme
 " colorscheme kalisi
-if (has("termguicolors"))
-    set termguicolors
-endif
+"if (has("termguicolors"))
+    "set termguicolors
+"endif
 colorscheme OceanicNext
 set background=dark
 
