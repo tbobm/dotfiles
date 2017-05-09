@@ -147,6 +147,8 @@ alias EC="exercism submit "
 #alias ghci='stack exec -- ghci'
 ## Python
 alias py="python3.5"
+## Go
+alias gr="go run "
 # Utils
 alias nmap="docker run -it --rm networkstatic/nmap "
 
