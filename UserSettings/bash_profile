@@ -123,7 +123,9 @@ alias gm="git mv" # @G.G
 alias gS="git submodule" # @G.G
 alias gd="git diff" # @G.G
 alias gf="git fetch" # @G.G
+alias gfa="git fetch --all" # @G.G
 alias gb="git branch" # @G.G
+alias gba="git branch --all" # @G.G
 alias gco="git checkout " # @G.G
 alias gq="git-quick-stats "
 alias gF="git-clang-format-3.8"
@@ -161,6 +163,10 @@ function wtfaliases {
 
 function gotosleep {
         sudo shutdown "+$1"
+}
+
+function torrent {
+        time "$*"
 }
 
 # Infos
