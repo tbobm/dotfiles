@@ -2,6 +2,7 @@
 set runtimepath+=~/etc/snippets
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Plugins
 Plug 'scrooloose/nerdtree'
 
 Plug 'tpope/vim-fugitive'
@@ -14,6 +15,9 @@ Plug 'freeo/vim-kalisi'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" haproxy
+Plug 'zimbatm/haproxy.vim'
+
 " Colorscheme
 Plug 'mhartington/oceanic-next'
 
@@ -22,6 +26,10 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+
+Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+
 
 Plug 'roxma/nvim-completion-manager'
 
@@ -36,7 +44,12 @@ Plug 'SirVer/ultisnips'
 
 Plug 'honza/vim-snippets'
 
+" Comments
+Plug 'scrooloose/nerdcommenter'
+
 " Language
+" Css
+Plug 'skammer/vim-css-color'
 " Python
 Plug 'davidhalter/jedi-vim'
 
@@ -53,6 +66,14 @@ Plug 'rust-lang/rust.vim'
 " Vim
 Plug 'dbakker/vim-lint'
 
+" Nodejs
+" Plug 'vimlab/neojs'
+Plug 'pangloss/vim-javascript'
+Plug 'othree/es.next.syntax.vim'
+
+" cpp
+"Plug 'zchee/deoplete-clang'
+
 " Plug 'alfredodeza/pytest.vim'
 " TODO Add cmake support @cpp/c
 
@@ -61,6 +82,15 @@ Plug 'dbakker/vim-lint'
 Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
+
+" Configuration
+
+
+" NERDComments
+let g:NERDSpaceDelims = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDCommentEmptyLines = 1
+let g:NERDDefaultAlign = 'left'
 
 " Deoplete config
 let g:deoplete#enable_at_startup = 1
@@ -77,7 +107,6 @@ set wildmenu
 
 " Generate ctags
 command! MakeTags !ctags -R .
-
 
 " Colorscheme
 " colorscheme kalisi
@@ -209,6 +238,23 @@ au BufNewFile,BufRead *.yml set
     \ softtabstop=2
     \ shiftwidth=2
 " au Bufenter *.hs compiler ghc
+
+au FileType haproxy set
+    \ softtabstop=2
+    \ shiftwidth=2
+    \ tabstop=2
+
+" Javascript
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+  \ 'tern#Complete',
+  \ 'jspc#omni'
+\]
+set completeopt=longest,menuone,preview
+let g:deoplete#sources = {}
+let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
 
 " User defined functions
 

@@ -73,6 +73,7 @@ alias v='$EDITOR' # @O.B
 alias vi='$EDITOR' # @O.B
 alias vim='$EDITOR' # @O.B
 alias j="jobs" # @O.B
+alias git="~/etc/git-achievements/git-achievements"
 alias g="git" # @O.B
 alias sv="service" # @O.B
 alias cu="curl" # @O.B
@@ -80,7 +81,7 @@ alias root='sudo -i' # @O.B Become root
 alias h="history" # @O.B
 alias wt="wtfaliases" # @O.B
 alias t="tmux" # @O.B
-alias ssh="sshrc" # @O.B
+# alias ssh="sshrc" # @O.B
 # Stats
 alias tuc="top_used_commands" # @O.B
 alias get_dir_size="du -sh" # @O.S
