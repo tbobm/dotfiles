@@ -1,24 +1,20 @@
 # ~/.bashrc made by Theo Massard
 
 # @env variables
-export GITHUB_CONFIG=/home/theom/etc/MyConfiguration
-export GITHUB_CONFIGURATION_FILE=/home/theom/.gitconfig
+export GITHUB_CONFIG=~/etc/MyConfiguration
+export GITHUB_CONFIGURATION_FILE=~/.gitconfig
 export HISTFILESIZE=20000
 export HISTSIZE=10000
 export HISTIGNORE="&:ls:[bf]g:exit:l:h:cd"
 export CHEATCOLORS=true
-export WINDOWS="10.0.2.2"
 export EDITOR=nvim
-export GOPATH=/home/theom/usr/w/go
-export GOROOT=/home/theom/etc/go
+export GOPATH=~/usr/w/go
+export GOROOT=~/etc/go
 export EDITOR_CONFIG=~/.config/nvim/init.vim
 export CONFIG_TMUX=~/.tmux.conf
 export CONFIG_SHELL_BOB=~/.bashrc
-export CONFIG_HYPER=~/.hyper.js
 export Z_HOME=~/etc/z/z.sh
 export CLANG_FORMAT_CONFIG=~/.clang-format
-export PREP02=/home/theom/usr/w/etna/prep02
-export THIRSTY_HOME=~/bin/thirsty/thirsty.sh
 export GOBIN=$GOPATH/bin
 export CABAL_BIN=~/.cabal/bin
 export RUST_BIN=~/.cargo/bin
@@ -46,16 +42,12 @@ alias rm='rm -i' # @M.F
 alias cp='cp -i' # @M.F
 alias mv='mv -i' # @M.F
 alias chx="chmod 755" # @O.P
-alias chr="chmod 644" # @O.P
-alias TU="top_used_commands"
 alias scratch="cd /tmp"
 # Pretty ls
 alias ls="ls --color" # @LS
 alias l="ls " # @LS
 alias ll="ls -l" # @LS
 alias la="ls -a" # @LS
-alias lsh='ls -lhXG' # @LS
-alias l-d="ls -d */"
 # Configuration management
 alias SB='$EDITOR $CONFIG_SHELL_BOB; source $CONFIG_SHELL_BOB' # @O.C
 alias SV='$EDITOR $EDITOR_CONFIG' # @O.C
@@ -68,15 +60,12 @@ alias reload_bash='source $CONFIG_SHELL_BOB' # @O.B
 # Track things
 alias todo='$EDITOR ~/todo.org' # @O.C
 alias notes='$EDITOR ~/notes.org' # @O.C
-alias cgit='cd $GITHUB_CONFIG'
 alias v='$EDITOR' # @O.B
 alias vi='$EDITOR' # @O.B
 alias vim='$EDITOR' # @O.B
 alias j="jobs" # @O.B
 alias git="~/etc/git-achievements/git-achievements"
 alias g="git" # @O.B
-alias sv="service" # @O.B
-alias cu="curl" # @O.B
 alias root='sudo -i' # @O.B Become root
 alias h="history" # @O.B
 alias wt="wtfaliases" # @O.B
@@ -84,32 +73,15 @@ alias t="tmux" # @O.B
 # alias ssh="sshrc" # @O.B
 # Stats
 alias tuc="top_used_commands" # @O.B
-alias get_dir_size="du -sh" # @O.S
-alias ports="netstat -tulanp" # @O.N shows open ports
 # Format piped content
-alias W="wc -l" # @O.B
-alias H="head -n " # @O.B
-alias T="tail -n " # @O.B
 alias p="pygmentize"
 alias less='less -FSRX' # @O.M
-alias G=" grep" # @O.M
 # Docker
 alias dk="docker" # @O.D
 alias dki="docker images" # @O.D
-alias DBT="docker build -t" # @O.D
-alias RUI="remove_untagged_images" # @O.D
-alias DR="docker run" # @O.D
-alias DPS="docker ps -a" # @O.D
-alias de="docker exec" # @O.D
-alias di="docker exec -it" # @O.D
 alias da="docker ps -a" # @O.D
 alias remove_untagged_images="docker images | grep '<none>' | grep -P '[1234567890abcdef]{12}' -o | xargs -L1 docker rmi" # @O.D
-## Docker-compose
-alias DC="docker-compose" # @O.C
-alias DCB="docker-compose build" # @O.C
-alias DCU="docker-compose up -d" # @O.C
-alias DRB="docker-compose up -d --build; ./init_containers.sh --deploy" # @O.C
-alias REB="DCB && DCU && ./init_containers.sh --deploy" # @O.C
+alias RUI="remove_untagged_images" # @O.D
 # Versionning
 ## Github
 alias ga="git add" # @G.G
@@ -118,8 +90,6 @@ alias gc="git commit -m" # @G.G
 alias gclone="git clone --recursive" # @G.G
 alias gl="git pull" # @G.G
 alias gs="git status" # @G.G
-alias gst="git status" # @G.G
-alias gsmu="git submodule foreach git pull origin master" # @G.G
 alias gm="git mv" # @G.G
 alias gS="git submodule" # @G.G
 alias gd="git diff" # @G.G
@@ -127,7 +97,6 @@ alias gf="git fetch" # @G.G
 alias gfa="git fetch --all" # @G.G
 alias gb="git branch" # @G.G
 alias gba="git branch --all" # @G.G
-alias gco="git checkout " # @G.G
 alias gq="git-quick-stats "
 alias gF="git-clang-format-3.8"
 alias gmv="git mv"
@@ -138,7 +107,7 @@ alias sr="svn revert"
 alias sci="svn ci -m "
 # Installs
 ## Pip
-alias pI="sudo -H pip install "
+alias pI="sudo -H python3.5 -m pip install "
 alias pI3="sudo -H pip3 install "
 # Exercism.io
 alias E="exercism "
@@ -164,23 +133,6 @@ function wtfaliases {
 
 function gotosleep {
         sudo shutdown "+$1"
-}
-
-function torrent {
-        time "$*"
-}
-
-# Infos
-
-function go_version {
-        go version | grep -Po '(?<=go)\d.\d.\d'
-}
-
-# Stats
-function space_left {
-    echo "Device         Total  Used  Free  Pct MntPoint"
-    df -h | grep "/dev/sd"
-    df -h | grep "/mnt"
 }
 
 # Github
@@ -241,59 +193,6 @@ function top_used_commands {
     history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n15
 }
 
-function bashtips {
-    {
-	echo "DIRECTORIES"
-	echo "-----------"
-	echo "~-  	Previous working directory"
-	echo "pushd tmp   Push tmp && cd tmp"
-	echo "popd    	Pop && cd"
-	echo ""
-	echo "GLOBBING AND OUTPUT SUBSTITUTION"
-	echo "--------------------------------"
-	echo "ls a[b-dx]e Globs abe, ace, ade, axe"
-	echo "ls a{c,bl}e Globs ace, able"
-	echo "\$(\ls)  	\`ls\` (but nestable!)"
-	echo ""
-	echo "HISTORY MANIPULATION"
-	echo "--------------------"
-	echo "!!  	Last command"
-	echo "!?foo   	Last command containing \`foo'"
-	echo "^foo^bar^   Last command containing \`foo', but substitute \`bar'"
-	echo "!!:0    	Last command word"
-	echo "!!:^    	Last command's first argument"
-	echo "!\$ 	Last command's last argument"
-	echo "!!:*    	Last command's arguments"
-	echo "!!:x-y  	Arguments x to y of last command"
-	echo "C-s 	search forwards in history"
-	echo "C-r 	search backwards in history"
-	echo ""
-	echo "LINE EDITING"
-	echo "------------"
-	echo "M-d 	kill to end of word"
-	echo "C-w 	kill to beginning of word"
-	echo "C-k 	kill to end of line"
-	echo "C-u 	kill to beginning of line"
-	echo "M-r 	revert all modifications to current line"
-	echo "C-] 	search forwards in line"
-	echo "M-C-]   	search backwards in line"
-	echo "C-t 	transpose characters"
-	echo "M-t 	transpose words"
-	echo "M-u 	uppercase word"
-	echo "M-l 	lowercase word"
-	echo "M-c 	capitalize word"
-	echo ""
-	echo "COMPLETION"
-	echo "----------"
-	echo "M-/ 	complete filename"
-	echo "M-~ 	complete user name"
-	echo "M-@ 	complete host name"
-	echo "M-\$    	complete variable name"
-	echo "M-! 	complete command name"
-	echo "M-^ 	complete history"
-    }
-}
-
 # Code
 ## Python
 function pytest {
@@ -308,9 +207,9 @@ function pytest {
 # ETNA
 ## CPP
 function add_makefile_cpp {
-	MAKEFILE_LOC="/home/theom/usr/w/etna/prep02/FDI-COBJ/useful/Makefile"
+	local MAKEFILE_LOC="$HOME/usr/w/etna/prep02/FDI-COBJ/useful/Makefile"
 	echo "Adding Makefile from :  $MAKEFILE_LOC"
-	cp $MAKEFILE_LOC .
+	cp "$MAKEFILE_LOC" .
 	printf "Done. \n"
 	$EDITOR ./Makefile
 }
@@ -319,34 +218,12 @@ function etna_time {
 	curl -v --silent https://prepintra.etna-alternance.net 2>&1 | grep Date | sed -e 's/< Date: //'
 }
 
-function transfer {
-	if [ $# -eq 0 ];
-	then
-		printf "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md";
-		return 1;
-	fi
-	tmpfile=$( mktemp -t transferXXX );
-	if tty -s;
-	then
-		basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g');
-		curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> "$tmpfile";
-	else
-		curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> "$tmpfile" ;
-	fi;
-	cat "$tmpfile";
-	rm -f "$tmpfile";
-}
-
 function dockerlint {
         docker run -it --rm --privileged -v "$(pwd)":/root/ projectatomic/dockerfile-lint dockerfile_lint
 }
 
 function yaml2json {
         python -c 'import sys, yaml, json; json.dump(yaml.load(sys.stdin), sys.stdout, indent=4)' < "$1" > "${2:-file.json}"
-}
-
-function randomstring {
-        strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo
 }
 
 function is_done {

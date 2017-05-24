@@ -233,7 +233,12 @@ au BufNewFile,BufRead *.html set
     \ smartindent
     \ smarttab
 
-au BufNewFile,BufRead *.yml set
+au FileType yaml set
+    \ tabstop=2
+    \ softtabstop=2
+    \ shiftwidth=2
+
+au FileType docker-compose set
     \ tabstop=2
     \ softtabstop=2
     \ shiftwidth=2
