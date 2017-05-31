@@ -33,7 +33,7 @@ Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 
 Plug 'roxma/nvim-completion-manager'
 
-Plug 'nvie/vim-flake8'
+Plug 'nvie/vim-flake8', { 'for': 'python' }
 
 Plug 'tpope/vim-surround'
 
@@ -51,25 +51,25 @@ Plug 'scrooloose/nerdcommenter'
 " Css
 Plug 'skammer/vim-css-color'
 " Python
-Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
 " Haskell
-Plug 'neovimhaskell/haskell-vim'
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'Shougo/vimproc.vim', { 'do': 'make'}
 
-Plug 'eagletmt/ghcmod-vim'
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 
 " Rust
-Plug 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 " Vim
 Plug 'dbakker/vim-lint'
 
 " Nodejs
 " Plug 'vimlab/neojs'
-Plug 'pangloss/vim-javascript'
-Plug 'othree/es.next.syntax.vim'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
 
 " cpp
 "Plug 'zchee/deoplete-clang'
