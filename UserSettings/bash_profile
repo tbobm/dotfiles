@@ -118,7 +118,7 @@ alias EC="exercism submit "
 #alias ghc='stack exec -- ghc'
 #alias ghci='stack exec -- ghci'
 ## Python
-alias py="python3.5"
+alias python="python3.5"
 ## Go
 alias gr="go run "
 # Utils

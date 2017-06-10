@@ -15,6 +15,9 @@ Plug 'freeo/vim-kalisi'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Vimwiki
+Plug 'vimwiki/vimwiki'
+
 " haproxy
 Plug 'zimbatm/haproxy.vim'
 
@@ -72,7 +75,7 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
 
 " cpp
-"Plug 'zchee/deoplete-clang'
+" Plug 'zchee/deoplete-clang'
 
 " Plug 'alfredodeza/pytest.vim'
 " TODO Add cmake support @cpp/c
@@ -85,6 +88,8 @@ call plug#end()
 
 " Configuration
 
+" vimwiki/vimwiki
+let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " NERDComments
 let g:NERDSpaceDelims = 1
