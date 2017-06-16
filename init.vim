@@ -10,8 +10,6 @@ Plug 'fatih/vim-go'
 
 Plug 'vim-syntastic/syntastic'
 
-Plug 'freeo/vim-kalisi'
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -19,7 +17,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 
 " haproxy
-Plug 'zimbatm/haproxy.vim'
+" Plug 'zimbatm/haproxy.vim'
 
 " Colorscheme
 Plug 'mhartington/oceanic-next'
@@ -48,23 +46,21 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Comments
-Plug 'scrooloose/nerdcommenter'
+" Plug 'scrooloose/nerdcommenter'
 
 " Language
-" Css
-Plug 'skammer/vim-css-color'
 " Python
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
 " Haskell
-Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+" Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 
-Plug 'Shougo/vimproc.vim', { 'do': 'make'}
+" Plug 'Shougo/vimproc.vim', { 'do': 'make'}
 
-Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+" Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 
 " Rust
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+" Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 " Vim
 Plug 'dbakker/vim-lint'
@@ -90,12 +86,6 @@ call plug#end()
 
 " vimwiki/vimwiki
 let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
-
-" NERDComments
-let g:NERDSpaceDelims = 1
-let g:NERDTrimTrailingWhitespace = 1
-let g:NERDCommentEmptyLines = 1
-let g:NERDDefaultAlign = 'left'
 
 " Deoplete config
 let g:deoplete#enable_at_startup = 1
@@ -134,13 +124,6 @@ set foldlevel=99
 " History
 set undofile
 set undodir=~/etc/undodir
-
-" netrw
-let g:netrw_browse_split=4
-let g:netrw_altv=1
-let g:netrw_liststyle=3
-let g:netrw_list_hide=netrw_gitignore#Hide()
-let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 " # Maps
 " Allow spacebar to fold
