@@ -11,6 +11,7 @@ export EDITOR=nvim
 export GOPATH=~/usr/w/go
 export GOROOT=~/etc/go
 export EDITOR_CONFIG=~/.config/nvim/init.vim
+export FTPLUGIN=~/.config/nvim/ftplugin/.
 export CONFIG_TMUX=~/.tmux.conf
 export CONFIG_SHELL_BOB=~/.bashrc
 export Z_HOME=~/etc/z/z.sh
@@ -241,6 +242,11 @@ fi
 export PS1="\[\e[34m\]\u\[\e[m\]\[\e[37m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]:\[\e[34m\]\W\[\e[m\]\`parse_git_branch\` "
 
 # Completion
+for f in ~/etc/completions/*;
+do
+# shellcheck source=/dev/null
+        source "$f"
+done
 eval "$(register-python-argcomplete coala)"
 COMPLETE_CLIMATE=/etc/bash_completion.d/climate_completion
 if [ -f $COMPLETE_CLIMATE ];

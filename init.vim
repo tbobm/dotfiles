@@ -8,6 +8,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " - Theme
 Plug 'mhartington/oceanic-next'
+Plug 'ajmwagar/vim-dues'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -15,8 +16,9 @@ Plug 'tpope/vim-fugitive'
 " Vimwiki
 Plug 'vimwiki/vimwiki'
 
-" Syntastic conf
-Plug 'vim-syntastic/syntastic'
+" Syntax conf
+" Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 
 " Autocompletion stuff
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -24,24 +26,26 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " - Go
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'fatih/vim-go'
 
 " For Js
-"Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
-"Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 
 " Snippets
 Plug 'SirVer/ultisnips'
 call plug#end()
 
 " Configuration
-
+let b:did_ftplugin = 1
 " Syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
-let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_checkers = ['eslint']
 
 " vimwiki/vimwiki
 let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
@@ -56,6 +60,23 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 let g:deoplete#sources#go#use_cache = 1
+let g:deoplete#enable_at_startup = 1
+" Js ?
+if !exists('g:deoplete#omni#input_patterns')
+  let g:deoplete#omni#input_patterns = {}
+endif
+" let g:deoplete#disable_auto_complete = 1
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+  \ 'tern#Complete',
+  \ 'jspc#omni'
+\]
+set completeopt=longest,menuone,preview
+let g:deoplete#sources = {}
+let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
 
 " Snippets
 let g:UltiSnipsSnippetsDir=$HOME."/etc/snippets/UltiSnip"
@@ -64,9 +85,10 @@ let g:UltiSnipsExpandTrigger="<tab>"
 set wildmenu
 
 "Graphical stuff again
-colorscheme OceanicNext
-set background=dark
-let g:airline_theme='base16_atelierlakeside'
+colorscheme dues
+set background=light
+let g:airline_theme='light'
+"let g:airline_theme='base16_atelierlakeside'
 set nu
 set noshowmode
 
@@ -102,45 +124,8 @@ au BufRead,BufNewFile *.c,*.cpp,*.h,*.hpp,*.hh map <leader>c :ClangFormat <CR>
 au BufRead,BufNewFile *.go map <leader>f :GoFull <CR>
 au BufRead,BufNewFile *.go map <leader>r :GoRun %<CR>
 
-" Python
-au BufNewFile,BufRead *.py set
-    \ tabstop=4
-    \ softtabstop=4
-    \ shiftwidth=4
-    \ textwidth=79
-
-" Haskell
-au BufNewFile,BufRead *.hs set
-    \ softtabstop=2
-    \ shiftwidth=2
-    \ smartindent
-    \ smarttab
-    \ fileformat=unix
-
-" HTML
-au BufNewFile,BufRead *.html set
-    \ tabstop=2
-    \ softtabstop=2
-    \ shiftwidth=2
-    \ smartindent
-    \ smarttab
-
-au FileType yaml set
-    \ tabstop=2
-    \ softtabstop=2
-    \ shiftwidth=2
-
-au FileType docker-compose set
-    \ tabstop=2
-    \ softtabstop=2
-    \ shiftwidth=2
-" au Bufenter *.hs compiler ghc
-
-au FileType haproxy set
-    \ softtabstop=2
-    \ shiftwidth=2
-    \ tabstop=2
-
+set smartindent
+set smarttab
 
 syntax on
 

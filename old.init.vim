@@ -31,7 +31,6 @@ Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/sy
 Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 
-
 Plug 'roxma/nvim-completion-manager'
 
 Plug 'nvie/vim-flake8', { 'for': 'python' }
