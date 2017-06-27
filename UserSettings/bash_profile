@@ -44,6 +44,8 @@ alias cp='cp -i' # @M.F
 alias mv='mv -i' # @M.F
 alias chx="chmod 755" # @O.P
 alias scratch="cd /tmp"
+alias setclip="xclip -selection c"
+alias getclip="xclip -selection c -o"
 # Pretty ls
 alias ls="ls --color" # @LS
 alias l="ls " # @LS
