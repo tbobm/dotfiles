@@ -12,8 +12,7 @@ export GOPATH=~/usr/w/go
 export GOROOT=~/etc/go
 export EDITOR_CONFIG=~/.config/nvim/init.vim
 export FTPLUGIN=~/.config/nvim/ftplugin/.
-export CONFIG_TMUX=~/.tmux.conf
-export CONFIG_SHELL_BOB=~/.bashrc
+export CONFIG_SHELL_BOB=~/.bashrc # CONFIG_SHELL happens to sometime be a script variable
 export Z_HOME=~/etc/z/z.sh
 export CLANG_FORMAT_CONFIG=~/.clang-format
 export GOBIN=$GOPATH/bin
@@ -72,7 +71,6 @@ alias g="git" # @O.B
 alias root='sudo -i' # @O.B Become root
 alias h="history" # @O.B
 alias wt="wtfaliases" # @O.B
-alias t="tmux" # @O.B
 # alias ssh="sshrc" # @O.B
 # Stats
 alias tuc="top_used_commands" # @O.B
@@ -80,7 +78,6 @@ alias tuc="top_used_commands" # @O.B
 alias p="pygmentize"
 alias less='less -FSRX' # @O.M
 # Docker
-alias dk="docker" # @O.D
 alias dki="docker images" # @O.D
 alias da="docker ps -a" # @O.D
 alias remove_untagged_images="docker images | grep '<none>' | grep -P '[1234567890abcdef]{12}' -o | xargs -L1 docker rmi" # @O.D
@@ -90,11 +87,8 @@ alias RUI="remove_untagged_images" # @O.D
 alias ga="git add" # @G.G
 alias gp="git push" # @G.G
 alias gc="git commit -m" # @G.G
-alias gclone="git clone --recursive" # @G.G
 alias gl="git pull" # @G.G
 alias gs="git status" # @G.G
-alias gm="git mv" # @G.G
-alias gS="git submodule" # @G.G
 alias gd="git diff" # @G.G
 alias gf="git fetch" # @G.G
 alias gfa="git fetch --all" # @G.G
@@ -102,7 +96,6 @@ alias gb="git branch" # @G.G
 alias gba="git branch --all" # @G.G
 alias gq="git-quick-stats "
 alias gF="git-clang-format-3.8"
-alias gmv="git mv"
 ## Svn
 alias sst="svn st"
 alias sa="svn add "
@@ -118,14 +111,15 @@ alias EF="exercism fetch "
 alias EC="exercism submit "
 # Languages
 ## Haskell
-#alias ghc='stack exec -- ghc'
-#alias ghci='stack exec -- ghci'
+alias ghc='stack exec -- ghc'
+alias ghci='stack exec -- ghci'
 ## Python
-alias python="python3.5"
+alias python="python3.6"
 ## Go
 alias gr="go run "
 # Utils
 alias nmap="docker run -it --rm networkstatic/nmap "
+alias redis="docker run -it --rm -p 6379:6379 --name redis redis"
 
 # Functions
 
@@ -136,13 +130,6 @@ function wtfaliases {
 
 function gotosleep {
         sudo shutdown "+$1"
-}
-
-# Github
-function gu {
-	msg="$*"
-	commit_msg="${msg}"
-	git commit -m "$commit_msg"
 }
 
 # get current branch in git repo
@@ -209,7 +196,7 @@ function pytest {
 
 # ETNA
 ## CPP
-function add_makefile_cpp {
+function add_makefile_cpp { # TODO: Fix me before next CPP project
 	local MAKEFILE_LOC="$HOME/usr/w/etna/prep02/FDI-COBJ/useful/Makefile"
 	echo "Adding Makefile from :  $MAKEFILE_LOC"
 	cp "$MAKEFILE_LOC" .
@@ -269,8 +256,3 @@ then
 	source $ASDF_HOME/completion/asdf.bash
 fi
 
-if [ -f ~/etc/completions/git.sh ];
-then
-# shellcheck source=/dev/null
-        source ~/etc/completions/git.sh
-fi
