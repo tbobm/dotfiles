@@ -2,8 +2,9 @@
 
 My dotfiles and configurations.
 
-## Todo
+## Files
 
-- [x] Create a shell script to make a one-command-install <br>
-- [x] Create basic architecture<br>
-- [x] Collect up-to-date informations about my config<br>
+- `init.vim` - Current neovim configuration file
+- `old.init.vim` - First neovim config
+- `vimrc` - In case I can't install neovim
+- `vimnoplug` - Same, but without any plugin
