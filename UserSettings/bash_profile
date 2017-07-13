@@ -114,9 +114,12 @@ alias EC="exercism submit "
 alias ghc='stack exec -- ghc'
 alias ghci='stack exec -- ghci'
 ## Python
-alias python="python3.6"
+alias python="python3.5"
+alias prospector="prospector -s veryhigh"
 ## Go
 alias gr="go run "
+## Ruby
+#alias ruby="ruby2.4"
 # Utils
 alias nmap="docker run -it --rm networkstatic/nmap "
 alias redis="docker run -it --rm -p 6379:6379 --name redis redis"

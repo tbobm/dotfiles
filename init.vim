@@ -28,7 +28,7 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'fatih/vim-go'
 
-" For Js
+" - Js
 Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
@@ -36,6 +36,7 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 " Snippets
 Plug 'SirVer/ultisnips'
 call plug#end()
+set guicursor=
 
 " Configuration
 let b:did_ftplugin = 1
@@ -85,7 +86,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 set wildmenu
 
 "Graphical stuff again
-colorscheme dues
+colorscheme deus
 set background=light
 let g:airline_theme='light'
 "let g:airline_theme='base16_atelierlakeside'
@@ -161,3 +162,9 @@ command! GlideUpdate call GlideUpdate()
 command! SV call SV()
 
 command! GoFull call GoFull()
+
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent loadview
+augroup END
