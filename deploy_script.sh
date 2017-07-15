@@ -7,6 +7,8 @@ GO_URL="https://storage.googleapis.com/golang/go1.7.4.linux-amd64.tar.gz"
 CONFIG_REPO="https://github.com/massard-t/MyConfiguration"
 
 
+echo "Deprecated. Please do a Manual installation"
+exit 1
 function create_dirs_home {
 	cd ~ || exit 1
 	mkdir -p usr/w/{work,scripts} bin etc/{MyConfiguration,clones}
