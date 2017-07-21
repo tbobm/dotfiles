@@ -35,6 +35,8 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 
 " Snippets
 Plug 'SirVer/ultisnips'
+
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 set guicursor=
 
@@ -79,13 +81,32 @@ let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 
+" Vim-go config
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+
+let g:go_fmt_command = "goimports"
+
+let g:go_auto_type_info = 1
+
 " Snippets
 let g:UltiSnipsSnippetsDir=$HOME."/etc/snippets/UltiSnip"
 let g:UltiSnipsExpandTrigger="<tab>"
 
 set wildmenu
 
-"Graphical stuff again
+" Graphical stuff again
+
+" ALE config
+let g:ale_sign_error = '⤫'
+let g:ale_sign_warning = '⚠'
+
 colorscheme deus
 set background=light
 let g:airline_theme='light'
@@ -163,8 +184,8 @@ command! SV call SV()
 
 command! GoFull call GoFull()
 
-augroup AutoSaveFolds
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent loadview
-augroup END
+"augroup AutoSaveFolds
+  "autocmd!
+  "autocmd BufWinLeave * mkview
+  "autocmd BufWinEnter * silent loadview
+"augroup END
