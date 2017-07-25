@@ -33,6 +33,9 @@ Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 
+" - Python
+Plug 'zchee/deoplete-jedi'
+
 " Snippets
 Plug 'SirVer/ultisnips'
 
@@ -80,6 +83,11 @@ let g:deoplete#sources = {}
 let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
+
+" Python
+let g:python3_host_prog = '/usr/bin/python3.5'
+let g:python_host_prog = '/usr/bin/python2.7'
+
 
 " Vim-go config
 let g:go_highlight_build_constraints = 1
