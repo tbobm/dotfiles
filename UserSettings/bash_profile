@@ -9,7 +9,7 @@ export HISTIGNORE="&:ls:[bf]g:exit:l:h:cd"
 export CHEATCOLORS=true
 export EDITOR=nvim
 export GOPATH=~/usr/w/go
-export GOROOT=~/etc/go
+export GOROOT=/usr/local/go
 export EDITOR_CONFIG=~/.config/nvim/init.vim
 export FTPLUGIN=~/.config/nvim/ftplugin/.
 export CONFIG_SHELL_BOB=~/.bashrc # CONFIG_SHELL happens to sometime be a script variable
@@ -66,7 +66,7 @@ alias v='$EDITOR' # @O.B
 alias vi='$EDITOR' # @O.B
 alias vim='$EDITOR' # @O.B
 alias j="jobs" # @O.B
-alias git="~/etc/git-achievements/git-achievements"
+#alias git="~/etc/git-achievements/git-achievements"
 alias g="git" # @O.B
 alias root='sudo -i' # @O.B Become root
 alias h="history" # @O.B
@@ -223,6 +223,12 @@ function is_done {
         notify-send -u critical "$*"
 }
 
+function add_tern {
+        cp $GITHUB_CONFIG/tpl/ternbase ./.tern-project
+        printf "%s\n" "Added ternfile"
+        cat .tern-project
+}
+
 ### Custom aliases (auto-completion)
 thefuck --alias &> /dev/null
 if [ $? == 0 ];
@@ -259,3 +265,7 @@ then
 	source $ASDF_HOME/completion/asdf.bash
 fi
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

@@ -13,9 +13,6 @@ Plug 'ajmwagar/vim-dues'
 " Git
 Plug 'tpope/vim-fugitive'
 
-" Vimwiki
-Plug 'vimwiki/vimwiki'
-
 " Syntax conf
 " Plug 'vim-syntastic/syntastic'
 Plug 'w0rp/ale'
@@ -52,9 +49,6 @@ let b:did_ftplugin = 1
 " let g:syntastic_check_on_wq = 0
 
 " let g:syntastic_javascript_checkers = ['eslint']
-
-" vimwiki/vimwiki
-let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
 set expandtab
 set fileformat=unix
