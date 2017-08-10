@@ -54,9 +54,7 @@ alias la="ls -a" # @LS
 alias SB='$EDITOR $CONFIG_SHELL_BOB; source $CONFIG_SHELL_BOB' # @O.C
 alias SV='$EDITOR $EDITOR_CONFIG' # @O.C
 alias SC='$EDITOR $CLANG_FORMAT_CONFIG'
-alias ST='$EDITOR $CONFIG_TMUX; tmux source-file $CONFIG_TMUX' # @O.C
 alias SG='$EDITOR $GITHUB_CONFIGURATION_FILE' # @ O.C
-alias SH='$EDITOR $CONFIG_HYPER'
 # Reload configuration
 alias reload_bash='source $CONFIG_SHELL_BOB' # @O.B
 # Track things

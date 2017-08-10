@@ -26,7 +26,7 @@ Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/sy
 Plug 'fatih/vim-go'
 
 " - Js
-Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'], 'build': {'unix': 'npm install -g tern'}}
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 
@@ -110,7 +110,7 @@ let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
 
 colorscheme deus
-set background=light
+set background=dark
 let g:airline_theme='light'
 "let g:airline_theme='base16_atelierlakeside'
 set nu
