@@ -1,3 +1,4 @@
+#!/bin/bash
 # ~/.bashrc made by Theo Massard
 
 # @env variables
@@ -24,8 +25,8 @@ export ASDF_HOME=~/etc/asdf
 # @z opti cd
 if [ -f $Z_HOME ];
 then
-	# shellcheck source=/dev/null
-	source $Z_HOME
+        # shellcheck source=/dev/null
+        source $Z_HOME
 fi
 
 # @history
