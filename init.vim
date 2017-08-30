@@ -33,6 +33,9 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 " - Python
 Plug 'zchee/deoplete-jedi'
 
+" - C/C++
+Plug 'zchee/deoplete-clang'
+
 " Snippets
 Plug 'SirVer/ultisnips'
 
@@ -77,6 +80,10 @@ let g:deoplete#sources = {}
 let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
+
+" C/C++
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/x86_64-linux-gnu/libclang.so'
+let g:deoplete#sources#clang#clang_header = '/usr/lib/clang/'
 
 " Python
 let g:python3_host_prog = '/usr/bin/python3.5'
