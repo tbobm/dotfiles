@@ -104,6 +104,7 @@ alias sci="svn ci -m "
 ## Pip
 alias pI="sudo -H python3.5 -m pip install "
 alias pI3="sudo -H pip3 install "
+alias spip="pip freeze > requirements.txt"
 # Exercism.io
 alias E="exercism "
 alias EF="exercism fetch "

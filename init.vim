@@ -40,6 +40,8 @@ Plug 'zchee/deoplete-clang'
 Plug 'SirVer/ultisnips'
 
 Plug 'jiangmiao/auto-pairs'
+
+Plug 'tpope/vim-surround'
 call plug#end()
 set guicursor=
 
