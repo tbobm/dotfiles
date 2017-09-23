@@ -66,6 +66,8 @@ let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 let g:deoplete#sources#go#use_cache = 1
 let g:deoplete#enable_at_startup = 1
+
+" let g:ale_linters = {'go': ['gometalinter']}
 " Js ?
 if !exists('g:deoplete#omni#input_patterns')
   let g:deoplete#omni#input_patterns = {}
