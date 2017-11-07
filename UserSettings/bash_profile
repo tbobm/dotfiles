@@ -21,6 +21,7 @@ export CABAL_BIN=~/.cabal/bin
 export RUST_BIN=~/.cargo/bin
 export PATH=$PATH:/usr/local/go/bin:/usr/local/go:~/bin:$GOBIN:$CABAL_BIN:$RUST_BIN
 export ASDF_HOME=~/etc/asdf
+export TERMINAL=konsole
 
 # @z opti cd
 if [ -f $Z_HOME ];
@@ -59,27 +60,18 @@ alias EG='$EDITOR $GITHUB_CONFIGURATION_FILE' # @ O.C
 alias EI='$EDITOR ~/.config/i3/config'
 alias EP='$EDITOR ~/.config/i3status/config'
 # Reload configuration
-alias reload_bash='source $CONFIG_SHELL_BOB' # @O.B
-# Track things
-alias todo='$EDITOR ~/todo.org' # @O.C
-alias notes='$EDITOR ~/notes.org' # @O.C
+alias Rbash='source $CONFIG_SHELL_BOB' # @O.B
 alias v='$EDITOR'
 alias vi='$EDITOR'
 alias vim='$EDITOR'
 alias j="jobs"
-#alias git="~/etc/git-achievements/git-achievements"
-alias g="git" # @O.B
-alias root='sudo -i' # @O.B Become root
-alias h="history" # @O.B
-alias wt="wtfaliases" # @O.B
-# alias ssh="sshrc" # @O.B
+alias h="history"
+alias wt="wtfaliases"
 # Stats
 alias tuc="top_used_commands" # @O.B
 # Format piped content
-alias p="pygmentize"
 alias less='less -FSRX' # @O.M
 # Docker
-alias dki="docker images" # @O.D
 alias da="docker ps -a" # @O.D
 alias remove_untagged_images="docker images | grep '<none>' | grep -P '[1234567890abcdef]{12}' -o | xargs -L1 docker rmi" # @O.D
 alias RUI="remove_untagged_images" # @O.D
@@ -104,8 +96,6 @@ alias sr="svn revert"
 alias sci="svn ci -m "
 # Installs
 ## Pip
-alias pI="sudo -H python3.5 -m pip install "
-alias pI3="sudo -H pip3 install "
 alias spip="pip freeze > requirements.txt"
 # Exercism.io
 alias E="exercism "
@@ -118,10 +108,6 @@ alias ghci='stack exec -- ghci'
 ## Python
 alias python="python3.5"
 alias prospector="prospector -s veryhigh"
-## Go
-alias gr="go run "
-## Ruby
-#alias ruby="ruby2.4"
 # Utils
 alias nmap="docker run -it --rm networkstatic/nmap "
 alias redis="docker run -d --rm -p 6379:6379 --name redis redis"
@@ -188,17 +174,6 @@ function top_used_commands {
     history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n15
 }
 
-# Code
-## Python
-function pytest {
-	if [ -f tests.py ];
-	then
-		py.test --cov climapper "$@" tests.py
-	else
-		py.test "$@"
-	fi
-}
-
 # ETNA
 ## CPP
 function add_makefile_cpp { # TODO: Fix me before next CPP project
@@ -222,7 +197,7 @@ function yaml2json {
 }
 
 function is_done {
-        notify-send -u critical "$*"
+        notify-send -u critical $*
 }
 
 function add_tern {
