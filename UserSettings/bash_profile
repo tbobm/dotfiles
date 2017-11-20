@@ -22,6 +22,7 @@ export RUST_BIN=~/.cargo/bin
 export PATH=$PATH:/usr/local/go/bin:/usr/local/go:~/bin:$GOBIN:$CABAL_BIN:$RUST_BIN
 export ASDF_HOME=~/etc/asdf
 export TERMINAL=konsole
+export MAKEOPTS="-j5"
 
 # @z opti cd
 if [ -f $Z_HOME ];
@@ -248,3 +249,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 echo "Have a nice day, Devops."
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
