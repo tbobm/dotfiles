@@ -1,6 +1,8 @@
-# MyConfiguration
+# dotfiles
 
-My dotfiles and configurations.
+User configuration 
+
+Contains work/school/personnal configurations (they're pretty much the same)
 
 ## Files
 
