@@ -1,9 +1,0 @@
-# looks trough history using command already typed
-"\e[A": history-search-backward
-"\e[B": history-search-forward
-
-# lists every possibility instead of giving an error
-set show-all-if-ambiguous on
-
-# ignore case
-set completion-ignore-case on

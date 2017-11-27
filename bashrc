@@ -225,29 +225,10 @@ do
 done
 eval "$(register-python-argcomplete coala)"
 COMPLETE_CLIMATE=/etc/bash_completion.d/climate_completion
-if [ -f $COMPLETE_CLIMATE ];
-then
-# shellcheck source=/dev/null
-	source $COMPLETE_CLIMATE
-fi
 
-if [ -f $ASDF_HOME/asdf.sh ];
-then
-# shellcheck source=/dev/null
-	source $ASDF_HOME/asdf.sh
-fi
-
-if [ -f $ASDF_HOME/completion/asdf.bash ];
-then
-# shellcheck source=/dev/null
-	source $ASDF_HOME/completion/asdf.bash
-fi
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -f $COMPLETE_CLIMATE ] && source $COMPLETE_CLIMATE
+[ -f $ASDF_HOME/asdf.sh ] && source $ASDF_HOME/asdf.sh
+[ -f $ASDF_HOME/completion/asdf.bash ] && source $ASDF_HOME/completion/asdf.bash
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 echo "Have a nice day, Devops."
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
