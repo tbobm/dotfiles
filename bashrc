@@ -232,3 +232,5 @@ COMPLETE_CLIMATE=/etc/bash_completion.d/climate_completion
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 echo "Have a nice day, Devops."
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.env ] && source ~/.env
